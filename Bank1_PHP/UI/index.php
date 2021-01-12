@@ -6,7 +6,7 @@
 	<body>
 	<div id="content">
 	<div id="odstpet"></div>
-			<a href="index.html"><div id="logo">
+			<a href="index.php"><div id="logo">
 				<div id="logo_text">
 					BardzoDobry
 				</div>
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 						<div id="przyciskrej">
-					<a href="rejestracja.html"><input type="button" value="Załóż darmowe konto"></a>
+					<a href="rejestracja.php"><input type="button" value="Załóż darmowe konto"></a>
 				</div>
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE

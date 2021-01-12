@@ -1,3 +1,6 @@
+<?php
+ include '../Backend/register.php'
+ ?>
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
@@ -27,28 +30,28 @@
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Nazwisko</div>
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">PESEL</div>
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Adres e-mail</div>
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Telefon komórkowy</div>
@@ -69,21 +72,21 @@
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Ulica</div>
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Numer domu/Numer mieszkania</div>
 							<div class="inputyy"><input type="text" id="imie"></div>
 						</div>
 					</div>
-					
+
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Kod pocztowy</div>
