@@ -9,7 +9,7 @@
 	<body>
 	<div id="content">
 	<div id="odstpet"></div>
-			<a href="index.html"><div id="logo">
+			<a href="index.php"><div id="logo">
 				<div id="logo_text">
 					BardzoDobry
 				</div>
