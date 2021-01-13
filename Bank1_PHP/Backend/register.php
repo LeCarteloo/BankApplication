@@ -1,6 +1,6 @@
 <?php
  class Register{
-
+   //funkcja "generateBankNumber" generuje numer bankowy;
    function generateBankNumber($countryCode, $bankNumber, $accountNumber){
        if(!empty($countryCode) && !empty($bankNumber) && !empty($accountNumber)){
          $accountAndBankNumber = $bankNumber.str_pad($accountNumber,10,"0",STR_PAD_LEFT);
@@ -11,7 +11,7 @@
        else
          return 0;
    }
-
+   //funkcja "register" zwraca - 1 jezeli udalo sie stworzyc uzytkownika, przeciwnie 0
    function register($name,$surname,$login,$password,$bankNumber){
      $db = mysqli_connect('localhost','root','','bank1');
 
@@ -20,7 +20,7 @@
      $userExist = mysqli_fetch_assoc($result);
 
      if($userExist)
-      echo "<script> console.log('Taki użytkownik już istnieje'); </script>";
+        return 0; // Taki uzytkownik juz istnieje
      else {
        do{
          $accountNumber = rand(1000000000000000,9999999999999999);
@@ -32,6 +32,7 @@
       $addUserQuery = "INSERT INTO user (name,surname,login,password,bankNumber)
       VALUES('$name','$surname','$login','$password','$final')";
       mysqli_query($db,$addUserQuery);
+      return 1; // Udalo sie stworzyc uzytkownika
      }
    }
  }
