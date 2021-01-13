@@ -1,5 +1,7 @@
 <?php
- include '../Backend/register.php'
+ include_once '../Backend/register.php';
+ $register = new Register($test=0,$test=0,$test=0,$test=0,$test=0);
+ $error = false;
  ?>
 <html lang="pl">
 	<head>
@@ -8,7 +10,7 @@
 	</head>
 	<body>
 	<div id="content">
-    <form action="index.pp" method="post">
+    <form action="rejestracja.php" method="post">
 
 	<div id="odstpet"></div>
 			<a href="index.php"><div id="logo">
@@ -29,35 +31,35 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Imię</div>
-							<div class="inputyy"><input type="text" id="imie" name="imie" required></div>
+							<div class="inputyy"><input type="text" name="imie" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Nazwisko</div>
-							<div class="inputyy"><input type="text" id="nazwisko" required></div>
+							<div class="inputyy"><input type="text" name="nazwisko" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">PESEL</div>
-							<div class="inputyy"><input type="text" id="pesel" required></div>
+							<div class="inputyy"><input type="text" name="pesel" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Adres e-mail</div>
-							<div class="inputyy"><input type="email" id="email" required></div>
+							<div class="inputyy"><input type="email" name="email" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Telefon komórkowy</div>
-							<div class="inputyy"><input type="text" id="telefon" required></div>
+							<div class="inputyy"><input type="text" name="telefon" required></div>
 						</div>
 					</div>
 				</div>
@@ -71,28 +73,28 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Miejscowość</div>
-							<div class="inputyy"><input type="text" id="miejscowosc" required></div>
+							<div class="inputyy"><input type="text" name="miejscowosc" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Ulica</div>
-							<div class="inputyy"><input type="text" id="ulica" required></div>
+							<div class="inputyy"><input type="text" name="ulica" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Numer domu/Numer mieszkania</div>
-							<div class="inputyy"><input type="text" id="numer_domu" required></div>
+							<div class="inputyy"><input type="text" name="numer_domu" required></div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Kod pocztowy</div>
-							<div class="inputyy"><input type="text" id="kod" required></div>
+							<div class="inputyy"><input type="text" name="kod" required></div>
 						</div>
 					</div>
 
@@ -126,7 +128,13 @@
 			</div>
 				<div id="przyciskrej">
 					<div id="p1"><a href="index.php"><input type="button" value="Wróć"></a></div>
-					<div id="p2"><a href=""><input type="submit" value="Załóż konto"></a></div>
+					<div id="p2"><a href=""><input type="submit" value="Załóż konto" name="zalozKonto"></a></div>
+          <?php
+          $bankNumber = 12345678;
+          if(isset($_POST['zalozKonto'])){
+            $register->register($_POST['imie'],$_POST['imie'],$_POST['imie'],$_POST['imie'],$bankNumber);
+          }
+           ?>
 				</div>
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE
