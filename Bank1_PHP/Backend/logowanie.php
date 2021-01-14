@@ -34,6 +34,7 @@
 		  $_SESSION['imie'] = $wiersz['name'];
 		  $_SESSION['nazwisko'] = $wiersz['surname'];
 	      $_SESSION['nr_konta'] = $wiersz['bankNumber'];
+		  $_SESSION['saldo'] = $wiersz['balance'];
 		  
 		  //---------------------------------------------------------------------------------------------
 		  

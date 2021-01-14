@@ -61,7 +61,7 @@
 							Saldo bieżące
 						</div>
 						<div class="srodkiPLN">
-							0,00 <span class="PLN">PLN</span>
+							<?php  echo $_SESSION['saldo'];?> <span class="PLN">PLN</span>
 						</div>
 					</div>
 					<div id="sekcja3">

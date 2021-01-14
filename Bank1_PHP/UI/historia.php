@@ -54,15 +54,25 @@
 						<div id="nrr">Numer konta</div>
 						<div id="kwotar">Kwota</div>
 					</div>
-					<div class="rekord">
-						
-					</div>
-					<div class="rekord">
-						
-					</div>
-										<div class="odstep"></div>
 					
-
+					<div class="rekord">
+						<div id="datarr">12.12.2020</div>
+						<div id="tytulrr">Fajny przelew dla ciebie</div>
+						<div id="nazwarr">Jan Kowalski</div>
+						<div id="nrrr">12 1234 1234 1234 1234</div>
+						<div id="kwotarr">-1000,00 zł</div>
+					</div>
+					
+					<div class="rekord">
+						<div id="datarr">14.01.2021</div>
+						<div id="tytulrr">Za fanty</div>
+						<div id="nazwarr">Kamil Komornik</div>
+						<div id="nrrr">51 6574 2354 1234 5567</div>
+						<div id="kwotarrd">+1500,00 zł</div>
+					</div>
+					
+					
+				<div class="odstep"></div>
 				</div>
 			</div>
 			<div id="stopka">

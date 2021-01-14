@@ -50,7 +50,7 @@
 							Z konta
 						</div>
 						<div id="moje_konto">
-							<div id="mk_text">Visa konto (100,00 PLN) <br> <?php  echo $_SESSION['nr_konta'];?></div>
+							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br> <?php  echo $_SESSION['nr_konta'];?></div>
 						</div>
 						<div class="etap">
 							Dane odbiorcy przelewu
