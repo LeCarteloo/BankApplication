@@ -15,7 +15,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="zalogowany.css">
+		<link rel="stylesheet" href="przelewWewnetrzny.css">
 	</head>
 	<body>
 	<div id="content">
@@ -40,8 +40,7 @@
 				</ul>
 			</div>
 			<div id="tresc">
-				Imie: <?php  echo $_SESSION['imie'];?>
-				Nazwisko: <?php  echo $_SESSION['nazwisko'];?>
+				
 			</div>
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE

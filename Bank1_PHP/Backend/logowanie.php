@@ -19,19 +19,21 @@
 	{
 		$login = $_POST['login'];
 		$haslo = $_POST['haslo'];
-	
+		
 		//zapytanie do bazy 
-		$sql = "SELECT login, password FROM user WHERE login='$login' AND password='$haslo'";
+		$sql = "SELECT * FROM user WHERE login='$login' AND password='$haslo'";
 		$result = $conn->query($sql);
 
-
-		if ($result->num_rows > 0) {
+		if($result->num_rows > 0) {
+			$wiersz = $result->fetch_assoc();
 		  //jesli takie konto istnieje
 		  //----------------------------------Miejsce na zmienne sesyjne które przydadzą się w całej stronie-------------
 		  //np. wyświetlanie imienia i nazwiska na każej stronie
-		  
-		  
-		  
+		  //przyklad stworzenia zmiennej sesyjnej
+		  //$_SESSION['nazwa_zmiennej'] = $wiersz['nazwa_kolumny_z_bazy'];
+		  $_SESSION['imie'] = $wiersz['name'];
+		  $_SESSION['nazwisko'] = $wiersz['surname'];
+	      $_SESSION['nr_konta'] = $wiersz['bankNumber'];
 		  
 		  //---------------------------------------------------------------------------------------------
 		  

@@ -40,6 +40,13 @@ body{
 	height:140px;
 }
 
+#odstepbox3{
+	width:100%;
+	float:left;
+	height:190px;
+}
+
+
 #kreska{
 	width:96%;
 	margin-left:2%;
@@ -163,13 +170,15 @@ input[type=text]:focus , input[type=email]:focus{
 input[type=password]{
 	float:left;
 	border:1px solid #ccc;
-	font-size:20px;
+	font-size:24px;
 	border-radius:4px;
 	box-sizing:border-box;
 	transition:.3s;
 	outline:none;
 	padding:2 5;
 	margin-left:80px;
+	width:400px;
+	height:40px;
 }
 
 input[type=password]:focus{

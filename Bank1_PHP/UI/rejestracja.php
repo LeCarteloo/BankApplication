@@ -24,6 +24,34 @@
 			<div id="kreska"></div>
 			<div class="boxetap">
 				<div class="boxlewa">
+					<i class="far fa-id-card"></i><div class="textboxa">Dane logowania</div>
+				</div>
+				<div class="boxprawa">
+					<div id="odstepbox3"></div>
+					<div id="wejscierowne">
+						<div class="wejscie">
+							<div class="textt">Login</div>
+							<div class="inputyy"><input type="text" name="login" required></div>
+						</div>
+					</div>
+
+					<div id="wejscierowne">
+						<div class="wejscie">
+							<div class="textt">Hasło</div>
+							<div class="inputyy"><input type="password" name="haslo" required></div>
+						</div>
+					</div>
+
+					<div id="wejscierowne">
+						<div class="wejscie">
+							<div class="textt">Powtórz hasło</div>
+							<div class="inputyy"><input type="password" name="powtorzhaslo" required></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="boxetap">
+				<div class="boxlewa">
 					<i class="far fa-id-card"></i><div class="textboxa">Dane osobowe</div>
 				</div>
 				<div class="boxprawa">
