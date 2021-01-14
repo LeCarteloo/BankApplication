@@ -26,9 +26,10 @@
 
       $balanceUser = $balance['balance'] - $kwotaPrzelewu;
       $balanceOut = $numberExist['balance'] + $kwotaPrzelewu;
+      echo "<script> console.log('$balanceUser, $balanceOut');</script>";
       $sql = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$numerRachunkuUzyt'";
       $sql1 = "UPDATE user SET balance ='$balanceOut' WHERE bankNumber='$numerRachunku'";
-      echo "<script> console.log('$balanceUser, $balanceOut');</script>";
+
       mysqli_query($db,$sql);
       mysqli_query($db,$sql1);
     }
