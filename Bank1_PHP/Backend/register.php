@@ -12,7 +12,7 @@
          return 0;
    }
 
-   function checkInputs($name, $surname, $login, $password, $pesel, $telephoneNumber, $location, $street, $houseNumber, $postCode){
+   function checkInputs($name, $surname, $login, $password, $againPassword, $pesel, $telephoneNumber, $location, $street, $houseNumber, $postCode){
      $error = True;
      if(!ctype_alpha($name)){
        $_SESSION['bladImie'] = '<span style="color:red; float:left; width:100%; height:10px; text-align:center;">Imie powinno zawierać tylko litery!</span>'; $error = False;}
@@ -34,12 +34,15 @@
         $_SESSION['bladNumer'] = '<span style="color:red; float:left; width:100%; height:10px; text-align:center;">Numer domu powinnien zawierać tylko cyfry!</span>'; $error = False;}
     if(!preg_match( '/^([0-9]{2})(-[0-9]{3})?$/i', $postCode )){
         $_SESSION['bladKod'] = '<span style="color:red; float:left; width:100%; height:10px; text-align:center;">Kod powinien być podana w formacie 00-000</span>'; $error = False;}
+    if(strcmp($password,$againPassword)!=0){
+        $_SESSION['bladPowtorzHaslo'] = '<span style="color:red; float:left; width:100%; height:10px; text-align:center;">Hasła nie są identyczne!</span>'; $error = False;}
 
         return $error;
    }
 
    //funkcja "register" zwraca - 1 jezeli udalo sie stworzyc uzytkownika, przeciwnie 0
-   function registerUser($name, $surname, $login, $password, $pesel, $email, $telephoneNumber, $location, $street, $houseNumber, $postCode, $bankNumber){
+   function registerUser($name, $surname, $login, $password, $againPassword, $pesel, $email, $telephoneNumber, $location, $street, $houseNumber, $postCode, $bankNumber){
+
 
      $db = mysqli_connect('localhost','root','','bank1');
 
@@ -62,6 +65,7 @@
       mysqli_query($db,$addUserQuery);
       return 1; // Udalo sie stworzyc uzytkownika
      }
+
    }
  }
  ?>
