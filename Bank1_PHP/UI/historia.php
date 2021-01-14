@@ -34,13 +34,36 @@
 			<div id="menu">
 				<ul>
 					<li><a href="zalogowany.php">Strona główna</a></li>
-					<li><a href="przelewWewnetrzny.php">Przelew wewnętrzny</a></li>
-					<li><a href="przelewZewnetrzny.php">Przelew zewnętrzny</a></li>
+					<li><a href="przelewZewnetrzny.php">Przelewy</a></li>
 					<li><a href="historia.php">Historia</a></li>
+					<li style="float:right;">
+						<div class="daned"><?php  echo $_SESSION['imie'];?></div>
+						<div class="daned"><?php  echo $_SESSION['nazwisko'];?></div>
+					</li>
 				</ul>
 			</div>
 			<div id="tresc">
-				
+				<div id="trescc">
+					<div id="odstepg"></div>
+					
+					
+					<div id="inforekord">
+						<div id="datar">Data przelewu</div>
+						<div id="tytulr">Tytuł przelewu</div>
+						<div id="nazwar">Odbiorca</div>
+						<div id="nrr">Numer konta</div>
+						<div id="kwotar">Kwota</div>
+					</div>
+					<div class="rekord">
+						
+					</div>
+					<div class="rekord">
+						
+					</div>
+										<div class="odstep"></div>
+					
+
+				</div>
 			</div>
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE
