@@ -167,7 +167,7 @@ li a:hover {
 
 #tytulr{
 	height:30px;
-	width:275px;
+	width:245px;
 	padding:0 0 0 5px;
 	line-height:30px;
 	font-size:16px;
@@ -191,7 +191,7 @@ li a:hover {
 
 #nrr{
 	height:30px;
-	width:200px;
+	width:220px;
 	padding:0 0 0 5px;
 	line-height:30px;
 	font-size:16px;
@@ -203,7 +203,7 @@ li a:hover {
 
 #kwotar{
 	height:30px;
-	width:100px;
+	width:110px;
 	padding:0 0 0 5px;
 	line-height:30px;
 	font-size:16px;
@@ -227,7 +227,7 @@ li a:hover {
 
 #tytulrr{
 	height:30px;
-	width:265px;
+	width:245px;
 	padding:0 0 0 5px;
 	font-size:18px;
 	font-family:"Segoe UI";
@@ -252,10 +252,10 @@ li a:hover {
 
 #nrrr{
 	height:30px;
-	width:200px;
+	width:220px;
 	padding:0 0 0 5px;
 	line-height:50px;
-	font-size:18px;
+	font-size:16px;
 	font-family:"Segoe UI";
 	font-weight:600;
 	text-align:center;

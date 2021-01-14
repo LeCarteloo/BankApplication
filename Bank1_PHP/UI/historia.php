@@ -45,33 +45,63 @@
 			<div id="tresc">
 				<div id="trescc">
 					<div id="odstepg"></div>
-					
-					
 					<div id="inforekord">
 						<div id="datar">Data przelewu</div>
 						<div id="tytulr">Tytuł przelewu</div>
 						<div id="nazwar">Odbiorca</div>
-						<div id="nrr">Numer konta</div>
+						<div id="nrr">Z numeru konta</div>
 						<div id="kwotar">Kwota</div>
 					</div>
 					
-					<div class="rekord">
-						<div id="datarr">12.12.2020</div>
-						<div id="tytulrr">Fajny przelew dla ciebie</div>
-						<div id="nazwarr">Jan Kowalski</div>
-						<div id="nrrr">12 1234 1234 1234 1234</div>
-						<div id="kwotarr">-1000,00 zł</div>
-					</div>
 					
-					<div class="rekord">
-						<div id="datarr">14.01.2021</div>
-						<div id="tytulrr">Za fanty</div>
-						<div id="nazwarr">Kamil Komornik</div>
-						<div id="nrrr">51 6574 2354 1234 5567</div>
-						<div id="kwotarrd">+1500,00 zł</div>
-					</div>
-					
-					
+					<?php
+						$numerK = $_SESSION['nr_konta'];
+						$conn = @new mysqli('localhost','root','','bank1');   //@new  PHP w przypadku błędów nie będzie wywalać błędów na ekran
+	
+						if($conn->connect_errno)  //errno - kod błędu
+						{
+							echo "Błąd połączenia";
+						}
+						else
+						{
+							
+							$sql = "SELECT * FROM historia WHERE numerPrzychodzacy='$numerK' OR numerWychodzacy='$numerK'";
+							$result = $conn->query($sql);
+
+						if($result->num_rows > 0) {
+							while($row = $result->fetch_assoc()) {
+								if($row["numerPrzychodzacy"]==$numerK){
+								echo '
+								<div class="rekord">
+									<div id="datarr">'.$row["data"].'</div>
+									<div id="tytulrr">'.$row["tytul"].'</div>
+									<div id="nazwarr">'.$row["nazwa"].'</div>
+									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
+									<div id="kwotarrd">'.$row["kwota"].' zł</div>
+								</div>';
+								}
+								else
+								{
+								echo '
+									<div class="rekord">
+									<div id="datarr">'.$row["data"].'</div>
+									<div id="tytulrr">'.$row["tytul"].'</div>
+									<div id="nazwarr">'.$row["nazwa"].'</div>
+									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
+									<div id="kwotarr">-'.$row["kwota"].' zł</div>
+								</div>';
+								}
+								}
+						} 
+						else 
+						{
+						  echo "0 results";
+						}
+						
+						}
+						
+						$conn->close();
+					?>
 				<div class="odstep"></div>
 				</div>
 			</div>
