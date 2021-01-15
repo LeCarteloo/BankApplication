@@ -4,7 +4,6 @@
  $register = new Register();
  //numer banku
  $bankNumber = 12345678;
- echo "<script> var modal = 0;</script>";
  ?>
 <html lang="pl">
 	<head>
@@ -43,6 +42,7 @@
     						unset($_SESSION['bladLogin']); //aby bład się niewyświetlał po odświeżeniu strony
     					}
     					?>
+
 						</div>
 					</div>
 
@@ -249,6 +249,9 @@
 
       <?php
       if(isset($_POST['zalozKonto'])){
+        $_SESSION['modal'] = '<script>$(".content").toggleClass("show");
+        $("#zalozKonto").addClass("disabled");</script>';
+        echo $_SESSION['modal'];
         if($register->checkInputs($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'])==TRUE){
             if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
               $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$bankNumber);
@@ -263,19 +266,6 @@
 	</div>
 
   <script>
-        $('#zalozKonto').click(function(){
-          $('.content').toggleClass("show");
-          $('#zalozKonto').addClass("disabled");
-          }
-        });
-        $('.close-icon').click(function(){
-          $('.content').toggleClass("show");
-          $('#zalozKonto').removeClass("disabled");
-        });
-        $('.close-btn').click(function(){
-          $('.content').toggleClass("show");
-          $('#zalozKonto').removeClass("disabled");
-        });
   </script>
 
 	</body>

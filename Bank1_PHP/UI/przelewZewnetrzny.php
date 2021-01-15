@@ -1,7 +1,9 @@
 <?php
 	session_start();
-	
-	
+  include_once '../Backend/transfer.php';
+
+	$transfer = new Transfer();
+
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
 	{
@@ -11,11 +13,12 @@
 	}
 ?>
 
-
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="przelewZewnetrzny.css">
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</head>
 	<body>
 	<div id="content">
@@ -43,9 +46,9 @@
 				</ul>
 			</div>
 			<div id="tresc">
-				<div id="rodzaj">Przelew zewnętrzny</div>
+				<div id="rodzaj">Przelewy</div>
 				<div id="ttresc">
-					<form action="">
+					<form action="" method="POST" id="przelewForm">
 						<div class="etap">
 							Z konta
 						</div>
@@ -82,14 +85,18 @@
 							</div>
 							<div class="wejscie2">
 								<div class="textt">Data wykonania</div>
-								<div class="inputyy"><input type="date" name="data" id="datap" class="wersja3" required></div>
+								<div class="inputyy"><input type="date" name="data" id="datap" class="wersja3" disabled></div>
 							</div>
 						</div>
 						<div class="etap"></div>
 						<div id="przyciski">
 							<div id="p1"><input type="reset" value="Wyczyść"></div>
-							<div id="p2"><input type="submit" value="Wykonaj przelew"></div>
+							<div id="p2"><input type="submit" value="Wykonaj przelew" name="wykonajPrzelew" id="wykonajPrzelew"></div>
 						</div>
+						<?php
+						if(isset($_POST['wykonajPrzelew'])){
+								$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa']);}
+						 ?>
 					</form>
 				</div>
 			</div>
@@ -97,9 +104,35 @@
 				STOPKA COPYRAJT @ MOJE
 			</div>
 	</div>
-	
+
+	<div class="center">
+		<div class="content">
+			<div class="header">
+				<h2>Sukces</h2>
+				<div class="close-icon"><label for="click" class="fas fa-times"></label></div>
+			</div>
+			<label for="click" class="fas fa-check-circle fa-4x"></label>
+			<p class = "text">Przelew wykonany pomyślnie!</p>
+			<div class="line"></div>
+			<label for="click" class="close-btn">Zamknij</label>
+		</div>
+	</div>
+
+
 	<script>
 		document.getElementById('datap').valueAsDate = new Date();
+
+    $("#przelewForm").submit(function(){
+			   $('.content').toggleClass("show");
+			   $('#zalozKonto').addClass("disabled");
+			$('.close-icon').click(function(){
+				$('.content').toggleClass("show");
+			});
+			$('.close-btn').click(function(){
+				$('.content').toggleClass("show");
+			});
+		});
+
 	</script>
 	</body>
 </html>
