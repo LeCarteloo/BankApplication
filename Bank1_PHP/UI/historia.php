@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	
-	
+
+
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
 	{
@@ -52,19 +52,19 @@
 						<div id="nrr">Z numeru konta</div>
 						<div id="kwotar">Kwota</div>
 					</div>
-					
-					
+
+
 					<?php
 						$numerK = $_SESSION['nr_konta'];
 						$conn = @new mysqli('localhost','root','','bank1');   //@new  PHP w przypadku błędów nie będzie wywalać błędów na ekran
-	
+
 						if($conn->connect_errno)  //errno - kod błędu
 						{
 							echo "Błąd połączenia";
 						}
 						else
 						{
-							
+
 							$sql = "SELECT * FROM historia WHERE numerPrzychodzacy='$numerK' OR numerWychodzacy='$numerK'";
 							$result = $conn->query($sql);
 
@@ -77,7 +77,7 @@
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
 									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
-									<div id="kwotarrd">'.$row["kwota"].' zł</div>
+									<div id="kwotarr">-'.$row["kwota"].' zł</div>
 								</div>';
 								}
 								else
@@ -88,18 +88,18 @@
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
 									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
-									<div id="kwotarr">-'.$row["kwota"].' zł</div>
+									<div id="kwotarrd">'.$row["kwota"].' zł</div>
 								</div>';
 								}
 								}
-						} 
-						else 
+						}
+						else
 						{
 						  echo "0 results";
 						}
-						
+
 						}
-						
+
 						$conn->close();
 					?>
 				<div class="odstep"></div>

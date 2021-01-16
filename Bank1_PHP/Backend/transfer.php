@@ -9,7 +9,7 @@ class Transfer{
 
  function readTransfers(){
         // zapytanie wyswietlajace wszystkie towary
-        $query = "SELECT * FROM historia";
+        $query = "SELECT * FROM historia WHERE type = 'Zewnetrzny'";
 
         // przygotowanie zapytania
         $stmt = $this->connection->prepare($query);
@@ -22,7 +22,7 @@ class Transfer{
  }
 
 
- function bankTransfer($userAccount, $outAccount, $title, $amount, $balance,$name){
+ function bankTransfer($userAccount, $outAccount, $title, $amount, $balance,$name,$type){
  $outAccount = "PL".$outAccount;
  $db = mysqli_connect('localhost','root','','bank1');
  //sprawdz czy istnieje taki numer rachunku
@@ -32,13 +32,13 @@ class Transfer{
 
  if($numberExist){
     if($balance >= $amount){
+
           $balanceUser = $balance - $amount;
           $balanceOut = $numberExist['balance'] + $amount;
           $date = date("Y-m-d");
-
           $updateBalanceUser = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount'";
           $updateBalanceOut = "UPDATE user SET balance ='$balanceOut' WHERE bankNumber='$outAccount'";
-          $addTransferQuery = "INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1)";
+          $addTransferQuery = "INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1,'$type')";
 
           mysqli_query($db,$updateBalanceUser);
           mysqli_query($db,$updateBalanceOut);
@@ -47,8 +47,15 @@ class Transfer{
           return $balanceUser;
     }
  }
- else
-   echo "<script> console.log('Nie ma takiego numeru konta');</script>";
+ else{
+   $balanceUser = $balance - $amount;
+   $date = date("Y-m-d");
+   $updateBalanceUser = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount'";
+   $addTransferQuery = "INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',0,'$type')";
+   mysqli_query($db,$updateBalanceUser);
+   mysqli_query($db,$addTransferQuery);
+ }
+
    }
 }
  ?>

@@ -94,7 +94,11 @@
 						</div>
 						<?php
 						if(isset($_POST['wykonajPrzelew'])){
-								$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa']);}
+							  if(substr($_POST['numer'],2,-16)=="12345678")
+									$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Wewnetrzny");
+							 else
+							 		$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Zewnetrzny");
+							}
 						 ?>
 					</form>
 				</div>
