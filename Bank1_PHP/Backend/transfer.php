@@ -1,6 +1,27 @@
 <?php
 class Transfer{
 
+  public function __construct($db)
+      {
+          $this->connection = $db;
+      }
+
+
+ function readTransfers(){
+        // zapytanie wyswietlajace wszystkie towary
+        $query = "SELECT * FROM historia";
+
+        // przygotowanie zapytania
+        $stmt = $this->connection->prepare($query);
+
+        // wykonanie zapytania
+        $stmt->execute();
+
+        return $stmt;
+
+ }
+
+
  function bankTransfer($userAccount, $outAccount, $title, $amount, $balance,$name){
  $outAccount = "PL".$outAccount;
  $db = mysqli_connect('localhost','root','','bank1');
@@ -17,10 +38,12 @@ class Transfer{
 
           $updateBalanceUser = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount'";
           $updateBalanceOut = "UPDATE user SET balance ='$balanceOut' WHERE bankNumber='$outAccount'";
-          $addTransferQuery = "INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date')";
+          $addTransferQuery = "INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1)";
+
           mysqli_query($db,$updateBalanceUser);
           mysqli_query($db,$updateBalanceOut);
           mysqli_query($db,$addTransferQuery);
+
           return $balanceUser;
     }
  }

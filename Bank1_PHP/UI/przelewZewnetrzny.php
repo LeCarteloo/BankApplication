@@ -2,8 +2,7 @@
 	session_start();
   include_once '../Backend/transfer.php';
 
-	$transfer = new Transfer();
-
+	$transfer = new Transfer("0");
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
 	{
