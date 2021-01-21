@@ -37,29 +37,27 @@
 							<div class="textt">Login</div>
 							<div class="inputyy" for="login">
                 <label for="login">
-                <input type="text" id="login" name="login" minlength="6" required>
+                <input type="text" id="login" name="login" minlength="6" placeholder="Login" required>
                 <ul class ="input-requirements">
                   <li>Przynajmniej sześć znaków</li>
                   <li>Musi zawierać tylko litery oraz cyfry</li>
                 </ul>
               </label>
               </div>
-    					<!-- if(isset($_SESSION['bladLogin'])){
-    						echo $_SESSION['bladLogin'];
-    						unset($_SESSION['bladLogin']); //aby bład się niewyświetlał po odświeżeniu strony
-    					} -->
-
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Hasło</div>
-							<div class="inputyy"><input type="password" name="haslo" minlength="6" required>
+							<div class="inputyy">
+                <label for="password">
+                <input type="password" id="haslo" name="haslo" minlength="8" placeholder="Hasło" required>
                 <ul class ="input-requirements">
                   <li>Przynajmniej osiem znaków</li>
-                  <li>Musi zawierać przynajmniej jedną cyfre</li>
+                  <li>Musi zawierać symbol specjalny</li>
                 </ul>
+                </label>
               </div>
 						</div>
 					</div>
@@ -67,13 +65,14 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Powtórz hasło</div>
-							<div class="inputyy"><input type="password" name="powtorzHaslo" required></div>
-              <?php
-    					if(isset($_SESSION['bladPowtorzHaslo'])){
-    						echo $_SESSION['bladPowtorzHaslo'];
-    						unset($_SESSION['bladPowtorzHaslo']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="password_repeat">
+                <input type="password" id="powtorzHaslo" name="powtorzHaslo" placeholder="Powtórz hasło" required>
+                <ul class ="input-requirements">
+                  <li>Hasła muszą być takie same</li>
+                </ul>
+              </label>
+              </div>
 						</div>
 					</div>
 				</div>
@@ -87,59 +86,72 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Imię</div>
-							<div class="inputyy"><input type="text" name="imie" required></div>
-              <?php
-    					if(isset($_SESSION['bladImie'])){
-    						echo $_SESSION['bladImie'];
-    						unset($_SESSION['bladImie']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="name">
+                <input type="text" name="imie" id="imie" placeholder="Imie" required>
+                <ul class ="input-requirements">
+                  <li>Musi zawierać tylko litery</li>
+                </ul>
+              </label>
+              </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Nazwisko</div>
-							<div class="inputyy"><input type="text" name="nazwisko" required></div>
-              <?php
-    					if(isset($_SESSION['bladNazwisko'])){
-    						echo $_SESSION['bladNazwisko'];
-    						unset($_SESSION['bladNazwisko']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="surname">
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required>
+                <ul class ="input-requirements">
+                  <li>Musi zawierać tylko litery</li>
+                </ul>
+                </label>
+                </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">PESEL</div>
-							<div class="inputyy"><input type="text" name="pesel" required></div>
-              <?php
-    					if(isset($_SESSION['bladPesel'])){
-    						echo $_SESSION['bladPesel'];
-    						unset($_SESSION['bladPesel']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+              <label for="pesel">
+              <input type="text" name="pesel" id="pesel" placeholder="PESEL" required>
+              <ul class ="input-requirements">
+                <li>Musi zawierać tylko cyfry</li>
+                <li>Musi zawierać jedenaście cyfr</li>
+              </ul>
+              </label>
+              </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Adres e-mail</div>
-							<div class="inputyy"><input type="email" name="email" required></div>
+							<div class="inputyy">
+                <label for="password_repeat">
+                <input type="email" name="email" id="email" placeholder="E-mail" required>
+                <ul class ="input-requirements">
+                  <li>Musi mieć prawidłowy format e-mailu</li>
+                </ul>
+                </label>
+                </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Telefon komórkowy</div>
-							<div class="inputyy"><input type="text" name="telefon" required></div>
-              <?php
-    					if(isset($_SESSION['bladTelefon'])){
-    						echo $_SESSION['bladTelefon'];
-    						unset($_SESSION['bladTelefon']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="telephone">
+                <input type="text" name="telefon" minlength="9" maxlength="9" id="telefon" placeholder="Telefon" required>
+                <ul class ="input-requirements">
+                <li>Musi zawierać tylko cyfry</li>
+                <li>Musi zawierać dziewięć cyfr</li>
+              </ul>
+              </label>
+              </div>
 						</div>
 					</div>
 				</div>
@@ -153,52 +165,56 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Miejscowość</div>
-							<div class="inputyy"><input type="text" name="miejscowosc" required></div>
-              <?php
-    					if(isset($_SESSION['bladMiejscowosc'])){
-    						echo $_SESSION['bladMiejscowosc'];
-    						unset($_SESSION['bladMiejscowosc']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="city">
+                <input type="text" name="miejscowosc" id="miejscowosc" placeholder="Miejscowość" required>
+              <ul class ="input-requirements">
+              <li>Musi zawierać tylko litery</li>
+            </ul>
+            </label>
+            </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Ulica</div>
-							<div class="inputyy"><input type="text" name="ulica" required></div>
-              <?php
-    					if(isset($_SESSION['bladUlica'])){
-    						echo $_SESSION['bladUlica'];
-    						unset($_SESSION['bladUlica']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="street">
+                <input type="text" name="ulica" id="ulica" placeholder="Ulica" required>
+                <ul class ="input-requirements">
+                <li>Musi zawierać tylko litery</li>
+              </ul>
+              </label>
+              </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
-							<div class="textt">Numer domu/Numer mieszkania</div>
-							<div class="inputyy"><input type="text" name="numer_domu" required></div>
-              <?php
-    					if(isset($_SESSION['bladNumer'])){
-    						echo $_SESSION['bladNumer'];
-    						unset($_SESSION['bladNumer']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="textt">Numer domu</div>
+							<div class="inputyy">
+                <label for="number">
+                <input type="text" name="numer_domu" id="numer_domu" placeholder="Numer domu" required>
+              <ul class ="input-requirements">
+              <li>Musi zawierać tylko cyfry</li>
+            </ul>
+            </label>
+            </div>
 						</div>
 					</div>
 
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Kod pocztowy</div>
-							<div class="inputyy"><input type="text" name="kod" required></div>
-              <?php
-    					if(isset($_SESSION['bladKod'])){
-    						echo $_SESSION['bladKod'];
-    						unset($_SESSION['bladKod']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy">
+                <label for="code">
+                <input type="text" name="kod" id="kod" placeholder="Kod pocztowy" required>
+              <ul class ="input-requirements">
+              <li>Musi mieć format 00-000</li>
+            </ul>
+            </label>
+            </div>
 						</div>
 					</div>
 
