@@ -12,8 +12,6 @@ $db       = $database->getConnection();
 // zainicjalizowanie obiektu cargo
 $transfer = new Transfer($db);
 
-
-
 $stmtTransfer = $transfer->readTransfers(); // wyswietlamy wszystko
 
 $num = $stmtTransfer->rowCount();

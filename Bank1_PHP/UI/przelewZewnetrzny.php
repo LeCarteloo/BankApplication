@@ -1,8 +1,13 @@
 <?php
 	session_start();
-  include_once '../Backend/transfer.php';
 
-	$transfer = new Transfer("0");
+	// dodanie polaczenia z database.php i dodanie obiektu cargo.php
+  include_once '../Backend/transfer.php';
+	include_once '../Backend/database.php';
+  $database = new Database();
+	$db = $database->getConnection();
+	$transfer = new Transfer($db);
+
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
 	{

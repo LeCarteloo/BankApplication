@@ -35,13 +35,19 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Login</div>
-							<div class="inputyy"><input type="text" name="login" required></div>
-              <?php
-    					if(isset($_SESSION['bladLogin'])){
+							<div class="inputyy" for="login">
+                <label for="login">
+                <input type="text" id="login" name="login" minlength="6" required>
+                <ul class ="input-requirements">
+                  <li>Przynajmniej sześć znaków</li>
+                  <li>Musi zawierać tylko litery oraz cyfry</li>
+                </ul>
+              </label>
+              </div>
+    					<!-- if(isset($_SESSION['bladLogin'])){
     						echo $_SESSION['bladLogin'];
     						unset($_SESSION['bladLogin']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+    					} -->
 
 						</div>
 					</div>
@@ -49,13 +55,12 @@
 					<div id="wejscierowne">
 						<div class="wejscie">
 							<div class="textt">Hasło</div>
-							<div class="inputyy"><input type="password" name="haslo" required></div>
-              <?php
-    					if(isset($_SESSION['bladHaslo'])){
-    						echo $_SESSION['bladHaslo'];
-    						unset($_SESSION['bladHaslo']); //aby bład się niewyświetlał po odświeżeniu strony
-    					}
-    					?>
+							<div class="inputyy"><input type="password" name="haslo" minlength="6" required>
+                <ul class ="input-requirements">
+                  <li>Przynajmniej osiem znaków</li>
+                  <li>Musi zawierać przynajmniej jedną cyfre</li>
+                </ul>
+              </div>
 						</div>
 					</div>
 
@@ -265,8 +270,6 @@
       </form>
 	</div>
 
-  <script>
-  </script>
-
+  <script src="scipts.js"></script>
 	</body>
 </html>
