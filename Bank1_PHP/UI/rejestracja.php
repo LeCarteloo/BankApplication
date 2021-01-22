@@ -48,6 +48,7 @@
                   <li>Przynajmniej sześć znaków</li>
                   <li>Musi zawierać tylko litery oraz cyfry</li>
                 </ul>
+                <br>
               </label>
               </div>
 						</div>

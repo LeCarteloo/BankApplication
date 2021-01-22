@@ -52,11 +52,12 @@
 			<div id="tresc">
 				<div id="rodzaj">Przelewy</div>
 				<div id="ttresc">
-					<form action="" method="POST" id="przelewForm" name="przelewForm">
+					<form action="" method="POST" id="przelewForm" name="przelewForm" autocomplete="off">
 						<div class="etap">
 							Z konta
 						</div>
 						<div id="moje_konto">
+							<input type="hidden" id="balance" value="<?php  echo $_SESSION['saldo'];?>">
 							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br> <?php  echo $_SESSION['nr_konta'];?></div>
 						</div>
 						<div class="etap">
@@ -66,11 +67,21 @@
 							<div id="odstep"></div>
 							<div class="wejscie">
 								<div class="textt">Nazwa odbiorcy</div>
-								<div class="inputyy"><input type="text" name="nazwa" class="wersja1" required></div>
+								<div class="inputyy">
+									<input type="text" name="nazwa" class="wersja1" placeholder="Nazwa odbiorcy" required>
+									</div>
 							</div>
 							<div class="wejscie">
 								<div class="textt">Numer konta</div>
-								<div class="inputyy"><input type="text" name="numer" class="wersja1" required></div>
+								<div class="inputyy">
+									<label for="number">
+									<input type="text" name="numer" class="wersja1" id="numer" placeholder="Numer konta" required>
+									<ul class ="input-requirements">
+	                  <li>Musi zawierać tylko cyfry</li>
+	                  <li>Musi zawierać dwadzieścia sześć cyfr</li>
+	                </ul>
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="etap">
@@ -80,16 +91,28 @@
 							<div id="odstep"></div>
 							<div class="wejscie2">
 								<div class="textt">Tytuł przelewu</div>
-								<div class="inputyy"><input type="text" name="tytul" class="wersja1" required></div>
+								<div class="inputyy">
+									<input type="text" name="tytul" class="wersja1" placeholder="Tytuł przelewu" required>
+								</div>
 							</div>
 							<div class="wejscie2">
 								<div class="textt">Kwota</div>
-								<div class="inputyy"><input type="text" name="kwota" class="wersja2" required></div>
+								<div class="inputyy">
+									<label for="amount">
+									<input type="text" name="kwota" class="wersja2" id="kwota" placeholder="Kwota" required>
+									<ul class ="input-requirements">
+	                  <li>Musi zawierać tylko cyfry</li>
+	                  <li>Musisz mieć taką kwote na koncie</li>
+	                </ul>
+									</label>
+								</div>
 								<div id="PLN"> PLN</div>
 							</div>
 							<div class="wejscie2">
 								<div class="textt">Data wykonania</div>
-								<div class="inputyy"><input type="date" name="data" id="datap" class="wersja3" disabled></div>
+								<div class="inputyy">
+									<input type="date" name="data" id="datap" class="wersja3" disabled>
+								</div>
 							</div>
 						</div>
 						<div class="etap"></div>
@@ -127,7 +150,7 @@
 		</div>
 	</div>
 
-
+	<script src="scripts/transferScript.js"></script>
 	<script>
 		document.getElementById('datap').valueAsDate = new Date();
 

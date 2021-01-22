@@ -383,8 +383,6 @@ input:not([type="submit"]):not(:placeholder-shown) {
 	box-shadow:0 0 8px 0 red;
 }
 
-/* Hide and show related .input-requirements when interacting with input */
-
 input:not([type="submit"]) + .input-requirements {
   overflow: hidden;
   max-height: 0;
@@ -394,7 +392,7 @@ input:not([type="submit"]) + .input-requirements {
 input:not([type="submit"]):hover + .input-requirements,
 input:not([type="submit"]):focus + .input-requirements,
 input:not([type="submit"]):active + .input-requirements {
-  max-height: 1000px; /* any large number (bigger then the .input-requirements list) */
+  max-height: 1000px;
   transition: max-height 1s ease-in;
 }
 
