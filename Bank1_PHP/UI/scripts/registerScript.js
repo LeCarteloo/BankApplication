@@ -145,6 +145,72 @@ var peselValidityChecks = [
 	}
 ];
 
+var emailValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return !input.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g)
+		},
+		invalidityMessage: 'To pole powinno mieć format e-mailu',
+    element: document.querySelector('label[for="email"] .input-requirements li:nth-child(1)')
+	}
+];
+
+var telephoneValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return input.value.match(/[^0-9]/g)
+		},
+		invalidityMessage: 'To pole powinno zawierać tylko cyfry',
+    element: document.querySelector('label[for="telephone"] .input-requirements li:nth-child(1)')
+	},
+  {
+		isInvalid: function(input) {
+			return input.value.length != 9;
+		},
+		invalidityMessage: 'To pole musi mieć długość dziewięciu cyfr',
+		element: document.querySelector('label[for="telephone"] .input-requirements li:nth-child(2)')
+	}
+];
+
+var cityValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return input.value.match(/[^a-zA-Z]/g)
+		},
+		invalidityMessage: 'To pole powinno zawierać tylko litery',
+    element: document.querySelector('label[for="city"] .input-requirements li:nth-child(1)')
+	}
+];
+
+var streetValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return input.value.match(/[^a-zA-Z]/g)
+		},
+		invalidityMessage: 'To pole powinno zawierać tylko litery',
+    element: document.querySelector('label[for="street"] .input-requirements li:nth-child(1)')
+	}
+];
+
+var numberValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return input.value.match(/[^0-9]/g)
+		},
+		invalidityMessage: 'To pole powinno zawierać tylko cyfry',
+    element: document.querySelector('label[for="number"] .input-requirements li:nth-child(1)')
+	}
+];
+
+var codeValidityChecks = [
+	{
+		isInvalid: function(input) {
+			return !input.value.match(/^([0-9]{2})(-[0-9]{3})?$/i)
+		},
+		invalidityMessage: 'To pole powinno mieć format kodu',
+    element: document.querySelector('label[for="code"] .input-requirements li:nth-child(1)')
+	}
+];
 
 /* ----------------------------
 	Setup CustomValidation
@@ -183,6 +249,24 @@ surnameRepeatInput.CustomValidation.validityChecks = surnameValidityChecks;
 
 peselRepeatInput.CustomValidation = new CustomValidation(peselRepeatInput);
 peselRepeatInput.CustomValidation.validityChecks = peselValidityChecks;
+
+emailRepeatInput.CustomValidation = new CustomValidation(emailRepeatInput);
+emailRepeatInput.CustomValidation.validityChecks = emailValidityChecks;
+
+telephoneRepeatInput.CustomValidation = new CustomValidation(telephoneRepeatInput);
+telephoneRepeatInput.CustomValidation.validityChecks = telephoneValidityChecks;
+
+cityRepeatInput.CustomValidation = new CustomValidation(cityRepeatInput);
+cityRepeatInput.CustomValidation.validityChecks = cityValidityChecks;
+
+streetRepeatInput.CustomValidation = new CustomValidation(streetRepeatInput);
+streetRepeatInput.CustomValidation.validityChecks = streetValidityChecks;
+
+numberRepeatInput.CustomValidation = new CustomValidation(numberRepeatInput);
+numberRepeatInput.CustomValidation.validityChecks = numberValidityChecks;
+
+codeRepeatInput.CustomValidation = new CustomValidation(codeRepeatInput);
+codeRepeatInput.CustomValidation.validityChecks = codeValidityChecks;
 
 
 

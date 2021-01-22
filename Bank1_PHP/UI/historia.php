@@ -15,7 +15,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="historia.css">
+		<link rel="stylesheet" href="css/historia.css">
 	</head>
 	<body>
 	<div id="content">
@@ -34,7 +34,7 @@
 			<div id="menu">
 				<ul>
 					<li><a href="zalogowany.php">Strona główna</a></li>
-					<li><a href="przelewZewnetrzny.php">Przelewy</a></li>
+					<li><a href="przelew.php">Przelewy</a></li>
 					<li><a href="historia.php">Historia</a></li>
 					<li style="float:right;">
 						<div class="daned"><?php  echo $_SESSION['imie'];?></div>

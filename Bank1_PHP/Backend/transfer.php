@@ -7,10 +7,9 @@ class Transfer{
   private $tableUser = "user";
 
 
-  public function __construct($db)
-      {
+  public function __construct($db){
           $this->connection = $db;
-      }
+  }
 
 
  function readTransfers(){
@@ -60,7 +59,7 @@ class Transfer{
 
    $balanceUser = $balance - $amount;
    $date = date("Y-m-d");
-   
+
    $makeExternalTransferQuery = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount';
    INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',2,'$type');";
 

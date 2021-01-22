@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	
-	
+
+
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
 	{
@@ -15,7 +15,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="zalogowany.css">
+		<link rel="stylesheet" href="css/zalogowany.css">
 	</head>
 	<body>
 	<div id="content">
@@ -35,7 +35,7 @@
 			<div id="menu">
 				<ul>
 					<li><a href="zalogowany.php">Strona główna</a></li>
-					<li><a href="przelewZewnetrzny.php">Przelewy</a></li>
+					<li><a href="przelew.php">Przelewy</a></li>
 					<li><a href="historia.php">Historia</a></li>
 					<li style="float:right;">
 						<div class="daned"><?php  echo $_SESSION['imie'];?></div>
@@ -55,7 +55,7 @@
 							<?php  echo $_SESSION['nr_konta'];?>
 						</div>
 					</div>
-					
+
 					<div id="sekcja2">
 						<div class="srodki">
 							Saldo bieżące

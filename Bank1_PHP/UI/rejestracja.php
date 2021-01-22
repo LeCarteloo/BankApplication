@@ -1,20 +1,26 @@
 <?php
  session_start();
+ include_once '../Backend/database.php';
  include_once '../Backend/register.php';
- $register = new Register();
+
+ $database = new Database();
+ $db = $database->getConnection();
+
+ $register = new Register($db);
+
  //numer banku
  $bankNumber = 12345678;
  ?>
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="rejestracja.css">
+		<link rel="stylesheet" href="css/rejestracja.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</head>
 	<body>
 	<div id="content">
-    <form method="post">
+    <form method="post" class="rejestracja" autocomplete="off">
 
 	<div id="odstpet"></div>
 			<a href="index.php"><div id="logo">
@@ -130,7 +136,7 @@
 						<div class="wejscie">
 							<div class="textt">Adres e-mail</div>
 							<div class="inputyy">
-                <label for="password_repeat">
+                <label for="email">
                 <input type="email" name="email" id="email" placeholder="E-mail" required>
                 <ul class ="input-requirements">
                   <li>Musi mieć prawidłowy format e-mailu</li>
@@ -270,22 +276,26 @@
 
       <?php
       if(isset($_POST['zalozKonto'])){
-        $_SESSION['modal'] = '<script>$(".content").toggleClass("show");
-        $("#zalozKonto").addClass("disabled");</script>';
-        echo $_SESSION['modal'];
-        if($register->checkInputs($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'])==TRUE){
-            if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
-              $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$bankNumber);
-           }
-        }
-        else{
-            echo("<meta http-equiv='refresh' content='1'>");
+        if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
+          $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$bankNumber);
         }
       }
        ?>
       </form>
 	</div>
 
-  <script src="scipts.js"></script>
+  <script src="scripts/registerScript.js"></script>
+  <script>
+  $("#zalozKonto").click(function(){
+       $('.content').toggleClass("show");
+       $('#zalozKonto').addClass("disabled");
+    $('.close-icon').click(function(){
+      $('.content').toggleClass("show");
+    });
+    $('.close-btn').click(function(){
+      $('.content').toggleClass("show");
+    });
+  });
+  </script>
 	</body>
 </html>

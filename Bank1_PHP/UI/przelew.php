@@ -20,7 +20,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="przelewZewnetrzny.css">
+		<link rel="stylesheet" href="css/przelew.css">
 		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</head>
@@ -41,7 +41,7 @@
 			<div id="menu">
 				<ul>
 					<li><a href="zalogowany.php">Strona główna</a></li>
-					<li><a href="przelewZewnetrzny.php">Przelewy</a></li>
+					<li><a href="przelew.php">Przelewy</a></li>
 					<li><a href="historia.php">Historia</a></li>
 					<li style="float:right;">
 						<div class="daned"><?php  echo $_SESSION['imie'];?></div>
@@ -52,7 +52,7 @@
 			<div id="tresc">
 				<div id="rodzaj">Przelewy</div>
 				<div id="ttresc">
-					<form action="" method="POST" id="przelewForm">
+					<form action="" method="POST" id="przelewForm" name="przelewForm">
 						<div class="etap">
 							Z konta
 						</div>
@@ -99,6 +99,7 @@
 						</div>
 						<?php
 						if(isset($_POST['wykonajPrzelew'])){
+
 							  if(substr($_POST['numer'],2,-16)=="12345678")
 									$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Wewnetrzny");
 							 else
@@ -130,16 +131,20 @@
 	<script>
 		document.getElementById('datap').valueAsDate = new Date();
 
-    $("#przelewForm").submit(function(){
-			   $('.content').toggleClass("show");
-			   $('#zalozKonto').addClass("disabled");
-			$('.close-icon').click(function(){
-				$('.content').toggleClass("show");
-			});
-			$('.close-btn').click(function(){
-				$('.content').toggleClass("show");
-			});
-		});
+    // $("#przelewForm").submit(function(e){
+		// 		  e.preventDefault();
+		// 			document.getElementById("przelewForm").submit();
+		// 	   $('.content').toggleClass("show");
+		// 	   $('#zalozKonto').addClass("disabled");
+		// 	$('.close-icon').click(function(){
+		// 		document.getElementById("przelewForm").submit();
+		// 		$('.content').toggleClass("show");
+		// 	});
+		// 	$('.close-btn').click(function(){
+		// 		document.getElementById("przelewForm").submit();
+		// 		$('.content').toggleClass("show");
+		// 	});
+		// });
 
 	</script>
 	</body>

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	//sprawdzam czy istnieje zmienna sesyjna zalgowany i czy zwrócono poprawny wynik z bazy
 	if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
 	{
@@ -12,7 +12,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
 	<div id="content">
@@ -40,7 +40,7 @@
 						<input type="password" class="dane" name="haslo">
 					</div>
 					<?php
-					if(isset($_SESSION['blad'])){ 
+					if(isset($_SESSION['blad'])){
 						echo $_SESSION['blad'];
 						unset($_SESSION['blad']); //aby bład się niewyświetlał po odświeżeniu strony
 					}
