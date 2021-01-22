@@ -1,7 +1,7 @@
 <?php
  session_start();
- include_once '../Backend/database.php';
- include_once '../Backend/register.php';
+ include_once '../Backend/config/database.php';
+ include_once '../Backend/objects/register.php';
 
  $database = new Database();
  $db = $database->getConnection();

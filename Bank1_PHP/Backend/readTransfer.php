@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-include_once 'database.php';
-include_once 'transfer.php';
+include_once 'config/database.php';
+include_once 'objects/transfer.php';
 
 // uzyskanie polaczenie z baza danych
 $database = new Database();
@@ -34,7 +34,7 @@ if ($num > 0) {
             "nazwa" => $nazwa,
             "kwota" => $kwota,
             "data" => $data,
-            "status" => $status
+            "id_status" => $id_status
         );
 
         array_push($transferArray["Przelewy"], $transferItem);

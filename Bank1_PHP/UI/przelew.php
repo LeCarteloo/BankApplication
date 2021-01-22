@@ -2,8 +2,8 @@
 	session_start();
 
 	// dodanie polaczenia z database.php i dodanie obiektu cargo.php
-  include_once '../Backend/transfer.php';
-	include_once '../Backend/database.php';
+  include_once '../Backend/objects/transfer.php';
+	include_once '../Backend/config/database.php';
   $database = new Database();
 	$db = $database->getConnection();
 	$transfer = new Transfer($db);

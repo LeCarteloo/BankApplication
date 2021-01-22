@@ -6,6 +6,8 @@ class Transfer{
   private $tableHistory = "historia";
   private $tableUser = "user";
 
+  public $id;
+  public $id_status;
 
   public function __construct($db){
           $this->connection = $db;
@@ -70,5 +72,33 @@ class Transfer{
  }
 
    }
+
+
+   function update($id){
+
+     // zapytanie do aktualizowania statusu faktury
+        $query = "UPDATE " . $this->tableHistory . "
+        SET
+        id_status=:id_status
+        WHERE id =" . $id;
+
+        // przygotowanie zapytania
+        $stmt = $this->connection->prepare($query);
+        // zabezpieczenie
+        $this->id_status = htmlspecialchars(strip_tags($this->id_status));
+
+        // podłączenie wartości do zapytania
+        $stmt->bindParam(":id_status", $this->id_status);
+
+        // wykonanie zapytania
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+
+   }
+
+
 }
  ?>
