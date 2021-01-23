@@ -4,7 +4,7 @@
 }
 
 body{
-	background-color:#f5f4f8;
+	background-color:#292929;
 	text-decoration:none;
 }
 
@@ -17,7 +17,7 @@ body{
 	position: absolute;
 	bottom: 0;
 	height: 50px;
-	border-top:1px solid #ccc;
+	border-top:1px solid #141414;
 	text-align:center;
 	line-height:50px;
 	color:#737373;
@@ -64,7 +64,8 @@ body{
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:150px;
-	border:1px solid #ccc;
+	border:1px solid #141414;
+	background-color:#1e1e1e;
 }
 
 #tekst_login{
@@ -73,7 +74,7 @@ body{
 	font-size:30px;
 	height:90px;
 	line-height:70px;
-	color:#737373;
+	color:#fff;
 }
 
 #dane_login{
@@ -94,6 +95,7 @@ body{
 	float:left;
 	height:40px;
 	margin-left:80px;
+	color:#fff;
 }
 
 input[type=text]{
@@ -143,6 +145,7 @@ input[type=password]:focus{
 	float:left;
 	height:40px;
 	margin-left:80px;
+	color:#fff;
 }
 
 
