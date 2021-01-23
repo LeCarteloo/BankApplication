@@ -16,7 +16,7 @@ class Transfer{
 
  function readTransfers(){
         // zapytanie wyswietlajace wszystkie przelewy z typu zewnetrznego
-        $query = "SELECT * FROM ". $this->tableHistory ." WHERE type = 'Zewnetrzny'";
+        $query = "SELECT * FROM ". $this->tableHistory ." WHERE type = 'Zewnetrzny' AND data = CURDATE() AND id_status = '2'";
 
         // przygotowanie zapytania
         $stmt = $this->connection->prepare($query);
@@ -49,7 +49,7 @@ class Transfer{
 
           $makeTransferQuery = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount';
           UPDATE user SET balance ='$balanceOut' WHERE bankNumber='$outAccount';
-          INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1,'$type');";
+          INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1,'$type');";
 
           $stmtTransfer = $this->connection->prepare($makeTransferQuery);
           $stmtTransfer->execute();
@@ -63,7 +63,7 @@ class Transfer{
    $date = date("Y-m-d");
 
    $makeExternalTransferQuery = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount';
-   INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',2,'$type');";
+   INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',2,'$type');";
 
    $stmtExternalTransfer = $this->connection->prepare($makeExternalTransferQuery);
    $stmtExternalTransfer->execute();
