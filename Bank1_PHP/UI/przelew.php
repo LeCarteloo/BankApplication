@@ -23,8 +23,23 @@
 		<link rel="stylesheet" href="css/przelew.css">
 		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<link rel="stylesheet" href="css/dark.css">
+
 	</head>
 	<body>
+<?php
+			if(isset($_SESSION['success']))
+				{
+					echo '<script>Swal.fire({
+  					title: "Sukces",
+  					text: "Przelew wykonany pomyślnie!",
+  					icon: "success",
+  					confirmButtonText: "Zamknij",
+					});</script>';
+					unset($_SESSION['success']);
+				}
+?>
 	<div id="content">
 	<div id="odstpet"></div>
 			<div id="baner">
@@ -123,10 +138,13 @@
 						<?php
 						if(isset($_POST['wykonajPrzelew'])){
 
+								$_SESSION['success'] = 1;
 							  if(substr($_POST['numer'],2,-16)=="12345678")
 									$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Wewnetrzny");
 							 else
 							 		$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Zewnetrzny");
+
+									header("Refresh:0");
 							}
 						 ?>
 					</form>
@@ -137,38 +155,9 @@
 			</div>
 	</div>
 
-	<div class="center">
-		<div class="content">
-			<div class="header">
-				<h2>Sukces</h2>
-				<div class="close-icon"><label for="click" class="fas fa-times"></label></div>
-			</div>
-			<label for="click" class="fas fa-check-circle fa-4x"></label>
-			<p class = "text">Przelew wykonany pomyślnie!</p>
-			<div class="line"></div>
-			<label for="click" class="close-btn">Zamknij</label>
-		</div>
-	</div>
-
 	<script src="scripts/transferScript.js"></script>
 	<script>
 		document.getElementById('datap').valueAsDate = new Date();
-
-    // $("#przelewForm").submit(function(e){
-		// 		  e.preventDefault();
-		// 			document.getElementById("przelewForm").submit();
-		// 	   $('.content').toggleClass("show");
-		// 	   $('#zalozKonto').addClass("disabled");
-		// 	$('.close-icon').click(function(){
-		// 		document.getElementById("przelewForm").submit();
-		// 		$('.content').toggleClass("show");
-		// 	});
-		// 	$('.close-btn').click(function(){
-		// 		document.getElementById("przelewForm").submit();
-		// 		$('.content').toggleClass("show");
-		// 	});
-		// });
-
 	</script>
 	</body>
 </html>

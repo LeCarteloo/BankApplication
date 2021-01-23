@@ -17,11 +17,24 @@
 		<link rel="stylesheet" href="css/rejestracja.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<link rel="stylesheet" href="css/dark.css">
 	</head>
 	<body>
+    <?php
+			if(isset($_SESSION['PogChamp']))
+				{
+					echo '<script>Swal.fire({
+  					title: "Sukces",
+  					text: "Zarejestrowano pomyślnie!",
+  					icon: "success",
+  					confirmButtonText: "Zamknij",
+					});</script>';
+					unset($_SESSION['PogChamp']);
+				}
+		 ?>
 	<div id="content">
-    <form method="post" class="rejestracja" autocomplete="off">
-
+    <form action="" method="POST" autocomplete="off">
 	<div id="odstpet"></div>
 			<a href="index.php"><div id="logo">
 				<div id="logo_text">
@@ -123,7 +136,7 @@
 							<div class="textt">PESEL</div>
 							<div class="inputyy">
               <label for="pesel">
-              <input type="text" name="pesel" id="pesel" placeholder="PESEL" required>
+              <input type="text" name="pesel" id="pesel" placeholder="PESEL" maxlength="11" required>
               <ul class ="input-requirements">
                 <li>Musi zawierać tylko cyfry</li>
                 <li>Musi zawierać jedenaście cyfr</li>
@@ -255,30 +268,18 @@
 			</div>
 				<div id="przyciskrej">
 					<div id="p1"><a href="index.php"><input type="button" value="Wróć"></a></div>
-					<div id="p2"><a href=""><input type="submit" value="Załóż konto" name="zalozKonto" id="zalozKonto"></a></div>
+					<div id="p2"><input type="submit" value="Załóż konto" name="zalozKonto" id="zalozKonto"></a></div>
 				</div>
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE
 			</div>
-
-    <div class="center">
-      <div class="content">
-        <div class="header">
-          <h2>Sukces</h2>
-          <div class="close-icon"><label for="click" class="fas fa-times"></label></div>
-        </div>
-        <label for="click" class="fas fa-check-circle fa-4x"></label>
-        <p class = "text">Udało Ci się pomyślnie zarejestrować!</p>
-        <div class="line"></div>
-        <label for="click" class="close-btn">Zamknij</label>
-      </div>
-    </div>
-
-
       <?php
       if(isset($_POST['zalozKonto'])){
         if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
+          $_SESSION['PogChamp'] = 1;
           $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$bankNumber);
+          header("Refresh:0");
+          exit();
         }
       }
        ?>
@@ -286,17 +287,5 @@
 	</div>
 
   <script src="scripts/registerScript.js"></script>
-  <script>
-  $("#zalozKonto").click(function(){
-       $('.content').toggleClass("show");
-       $('#zalozKonto').addClass("disabled");
-    $('.close-icon').click(function(){
-      $('.content').toggleClass("show");
-    });
-    $('.close-btn').click(function(){
-      $('.content').toggleClass("show");
-    });
-  });
-  </script>
 	</body>
 </html>
