@@ -19,5 +19,14 @@ class User{
     return $stmt;
   }
 
+  function sumBalance(){
+    $query = "SELECT sum(balance) as sumBalance FROM " . $this->tableUser;
+
+    $stmt = $this->connection->prepare($query);
+
+    $stmt->execute();
+
+    return $stmt;
+  }
 }
  ?>
