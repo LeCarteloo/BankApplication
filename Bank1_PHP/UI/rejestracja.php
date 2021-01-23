@@ -1,5 +1,6 @@
 <?php
  session_start();
+
  include_once '../Backend/config/database.php';
  include_once '../Backend/objects/register.php';
 
@@ -9,8 +10,7 @@
  $register = new Register($db);
 
  //numer banku
- $bankNumber = 12345678;
- ?>
+ $bankNumber = 12345678;?>
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
@@ -21,18 +21,6 @@
 		<link rel="stylesheet" href="css/dark.css">
 	</head>
 	<body>
-    <?php
-			if(isset($_SESSION['PogChamp']))
-				{
-					echo '<script>Swal.fire({
-  					title: "Sukces",
-  					text: "Zarejestrowano pomyślnie!",
-  					icon: "success",
-  					confirmButtonText: "Zamknij",
-					});</script>';
-					unset($_SESSION['PogChamp']);
-				}
-		 ?>
 	<div id="content">
     <form action="" method="POST" autocomplete="off">
 	<div id="odstpet"></div>
@@ -273,6 +261,7 @@
 			<div id="stopka">
 				STOPKA COPYRAJT @ MOJE
 			</div>
+      </form>
       <?php
       if(isset($_POST['zalozKonto'])){
         if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
@@ -283,7 +272,18 @@
         }
       }
        ?>
-      </form>
+       <?php
+       			if(isset($_SESSION['PogChamp']))
+       				{
+       					echo '<script>Swal.fire({
+         					title: "Sukces",
+         					text: "Zarejestrowano pomyślnie!",
+         					icon: "success",
+         					confirmButtonText: "Zamknij",
+       					});</script>';
+       					unset($_SESSION['PogChamp']);
+       				}
+       ?>
 	</div>
 
   <script src="scripts/registerScript.js"></script>

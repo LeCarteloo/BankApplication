@@ -9,6 +9,14 @@ class Transfer{
   public $id;
   public $id_status;
 
+  public $numerPrzychodzacy;
+  public $numerWychodzacy;
+  public $tytul;
+  public $nazwa;
+  public $kwota;
+  public $data;
+  public $type;
+
   public function __construct($db){
           $this->connection = $db;
   }
@@ -98,6 +106,43 @@ class Transfer{
         return false;
 
    }
+
+   function makeTransfer(){
+     // zapytanie do wstawiania rekordu
+        $query = "INSERT INTO " . $this->tableHistory . "
+        SET
+        numerPrzychodzacy=:numerPrzychodzacy, numerWychodzacy=:numerWychodzacy, tytul=:tytul, nazwa=:nazwa, kwota=:kwota, data=:data, id_status=:id_status, type=:type;
+        UPDATE user SET balance = (SELECT balance FROM user WHERE bankNumber=:numerPrzychodzacy) + :kwota WHERE bankNumber=:numerPrzychodzacy;";
+        // przygotowanie zapytania
+        $stmt  = $this->connection->prepare($query);
+
+        // zabezpieczenie
+        $this->numerPrzychodzacy    = htmlspecialchars(strip_tags($this->numerPrzychodzacy));
+        $this->numerWychodzacy       = htmlspecialchars(strip_tags($this->numerWychodzacy));
+        $this->tytul        = htmlspecialchars(strip_tags($this->tytul));
+        $this->nazwa = htmlspecialchars(strip_tags($this->nazwa));
+        $this->kwota   = htmlspecialchars(strip_tags($this->kwota));
+        $this->data   = htmlspecialchars(strip_tags($this->data));
+        $this->id_status   = htmlspecialchars(strip_tags($this->id_status));
+        $this->type   = htmlspecialchars(strip_tags($this->type));
+        // podłączenie wartości do zapytania
+        $stmt->bindParam(":numerPrzychodzacy", $this->numerPrzychodzacy);
+        $stmt->bindParam(":numerWychodzacy", $this->numerWychodzacy);
+        $stmt->bindParam(":tytul", $this->tytul);
+        $stmt->bindParam(":nazwa", $this->nazwa);
+        $stmt->bindParam(":kwota", $this->kwota);
+        $stmt->bindParam(":data", $this->data);
+        $stmt->bindParam(":id_status", $this->id_status);
+        $stmt->bindParam(":type", $this->type);
+
+        // wykonanie zapytania
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+   }
+
 
 
 }

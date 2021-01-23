@@ -31,12 +31,12 @@
 <?php
 			if(isset($_SESSION['success']))
 				{
-					echo '<script>Swal.fire({
-  					title: "Sukces",
-  					text: "Przelew wykonany pomyślnie!",
-  					icon: "success",
-  					confirmButtonText: "Zamknij",
-					});</script>';
+					// echo '<script>Swal.fire({
+  				// 	title: "Sukces",
+  				// 	text: "Przelew wykonany pomyślnie!",
+  				// 	icon: "success",
+  				// 	confirmButtonText: "Zamknij",
+					// });</script>';
 					unset($_SESSION['success']);
 				}
 ?>
@@ -162,21 +162,6 @@
 			document.getElementById('datap').valueAsDate = new Date();
 
 		}
-    // $("#przelewForm").submit(function(e){
-		// 		  e.preventDefault();
-		// 			document.getElementById("przelewForm").submit();
-		// 	   $('.content').toggleClass("show");
-		// 	   $('#zalozKonto').addClass("disabled");
-		// 	$('.close-icon').click(function(){
-		// 		document.getElementById("przelewForm").submit();
-		// 		$('.content').toggleClass("show");
-		// 	});
-		// 	$('.close-btn').click(function(){
-		// 		document.getElementById("przelewForm").submit();
-		// 		$('.content').toggleClass("show");
-		// 	});
-		// });
-
 	</script>
 	</body>
 </html>
