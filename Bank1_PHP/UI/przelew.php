@@ -111,7 +111,7 @@
 							<div class="wejscie2">
 								<div class="textt">Data wykonania</div>
 								<div class="inputyy">
-									<input type="date" name="data" id="datap" class="wersja3" disabled>
+									<input type="date" name="data" id="datap" class="wersja3" disabled><div id="datad" onClick="datad()">+</div>
 								</div>
 							</div>
 						</div>
@@ -153,7 +153,10 @@
 	<script src="scripts/transferScript.js"></script>
 	<script>
 		document.getElementById('datap').valueAsDate = new Date();
-
+		function datad(){
+			document.getElementById('datap').valueAsDate = new Date();
+			
+		}
     // $("#przelewForm").submit(function(e){
 		// 		  e.preventDefault();
 		// 			document.getElementById("przelewForm").submit();

@@ -4,7 +4,7 @@
 }
 
 body{
-	background-color:#f5f4f8;
+	background-color:#292929;
 	text-decoration:none;
 }
 
@@ -15,12 +15,11 @@ body{
 #stopka{
 	width:100%;
 	height: 50px;
-	border-top:1px solid #ccc;
+	border-top:1px solid #141414;
 	text-align:center;
 	line-height:50px;
 	color:#737373;
 	float:left;
-	background-color:#b5b5b5;
 }
 
 #odstpet{
@@ -50,7 +49,7 @@ body{
 #kreska{
 	width:96%;
 	margin-left:2%;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid #141414;
 	height:50px;
 }
 
@@ -66,7 +65,7 @@ body{
 	color:#fff;
 	font-weight:600;
 	float:left;
-	width:96%;
+	width:95%;
 	height:35px;
 	font-size:20px;
 	border-bottom:1px solid #fff;
@@ -85,7 +84,7 @@ body{
 .boxetap{
 	width:100%;
 	height:700px;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid #141414;
 }
 
 .boxlewa{
@@ -110,6 +109,7 @@ body{
 .textboxa{
 	float:left;
 	margin-top:330px;
+	color:#fff;
 }
 
 .boxprawa{
@@ -133,6 +133,7 @@ body{
 	font-size:20px;
 	margin-left:80px;
 	font-weight:600;
+	color:#fff;
 }
 
 .inputyy{
@@ -160,6 +161,7 @@ input[type=text], input[type=email]{
 	margin-left:80px;
 	width:400px;
 	height:40px;
+	background-color:#dbdbdb;
 }
 
 input[type=password]{
@@ -174,6 +176,7 @@ input[type=password]{
 	margin-left:80px;
 	width:400px;
 	height:40px;
+	background-color:#dbdbdb;
 }
 
 #przycisk{
@@ -247,9 +250,9 @@ input[type=password]{
 .wybor label span{
 	position: relative;
 	display: inline-block;
-	background:#fff;
+	background:#1f1f1f;
 	padding: 40px 80px;
-	color:#000;
+	color:#fff;
 	border-radius:5px;
 	font-size:20px;
 	transition:0.1s;
@@ -264,11 +267,13 @@ input[type=password]{
 	lfet:0;
 	width:100%;
 	height:50%;
+
 }
 
 .wybor label input[type="checkbox"]:checked ~ span{
 	background-color:#fff;
 	border:2px solid #bd004f;
+	background:#1f1f1f;
 }
 
 #p1{
@@ -297,8 +302,9 @@ input[type=password]{
 	 visibility: hidden;
 		width: 400px;
 		height: 350px;
-		background: white;
+		background: #19191A;
 		box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
+		color:#d1d1d1;
 }
 #zalozKonto.disabled{
   pointer-events: none;

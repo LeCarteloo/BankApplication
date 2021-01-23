@@ -4,24 +4,24 @@
 }
 
 body{
-	background-color:#EBEBEB;
+	background-color:#292929;
 	text-decoration:none;
 }
 
 #content{
 	min-height: 100vh;
-	background-color:#fff;
+	background-color:#292929;
 }
 
 #stopka{
 	width:100%;
 	bottom: 0;
 	height: 50px;
-	border-top:1px solid #ccc;
+	border-top:1px solid #141414;
 	text-align:center;
 	line-height:50px;
 	color:#737373;
-	margin-top:15px;
+	margin-top:20px;
 }
 
 #odstpet{
@@ -89,18 +89,22 @@ body{
 #menu{
 	width:1100px;
 	height:50px;
-	background-color:#1E2332;
+	background-color:#1f1f1f;
 	margin-top:50px;
 	margin-left:auto;
 	margin-right:auto;
+	border:1px solid #1a1a1a;
+	border-bottom:0;
 }
 
 #tresc{
 	width:1100px;
 	min-height:750px;
-	background-color:#d9d9d9;
+	background-color:#121212;
 	margin-left:auto;
 	margin-right:auto;
+	border:1px solid #1a1a1a;
+	border-top:0;
 }
 
 ul {
@@ -119,16 +123,17 @@ li a {
 	width: 130px;
 	text-decoration: none;
 	color:#Fff;
-	background-color:#1E2332;
+	background-color:#191f24;
 	width:200px;
 	height:50px;
 	line-height:50px;
 	margin: 0px 1px 1px 0px;
+	border-right:1px solid #121212;
 
 }
 
 li a:hover {
-	background: #3a4463;
+	background: #232a31;
 }
 
 #rodzaj{
@@ -139,10 +144,11 @@ li a:hover {
 	margin-right:auto;
 	font-size:22px;
 	font-family:"Segoe UI";
+	color:#fff
 }
 
 #ttresc{
-	background-color:#fff;
+	background-color:#1f1f1f;
 	width:900px;
 	height:650px;
 	margin-left:auto;
@@ -150,7 +156,7 @@ li a:hover {
 }
 
 .etap{
-	border-bottom:1px solid #d9d9d9;
+	border-bottom:1px solid #fff;
 	width:850px;
 	margin-left:auto;
 	margin-right:auto;
@@ -158,11 +164,13 @@ li a:hover {
 	font-weight:600;
 	font-size:16px;
 	font-family:"Segoe UI";
+	color:#d1d1d1;
 }
 #moje_konto{
 	width:850px;
 	margin-left:auto;
 	margin-right:auto;
+	color:#d1d1d1;
 }
 
 #mk_text{
@@ -196,6 +204,7 @@ li a:hover {
 	margin-right:15px;
 	margin-left:120px;
 	margin-top:3px;
+	color:#d1d1d1;
 }
 
 .inputyy{
@@ -218,7 +227,9 @@ li a:hover {
 	font-size:17px;
 	padding-right:43px;
 	font-weight:600;
-	line-height:48px;
+	line-height:40px;
+	margin-left:-240px;
+	color:#fff;
 }
 
 #przyciski{
@@ -277,6 +288,19 @@ li a:hover {
 	margin-left:10px;
 	width:170px;
 	height:30px;
+		color:#fff;
+}
+
+#datad{
+	float:left;
+	width:15px;
+	height:15px;
+	cursor:pointer;
+	color:#fff;
+	font-size:25px;
+	font-weight:600;
+	line-height:34px;
+	margin-left:5px;
 }
 
 input[type=text]:focus , input[type=email]:focus{
@@ -440,7 +464,7 @@ input:not([type="submit"]):not(:placeholder-shown) {
 
 input:not([type="text"]):not(:placeholder-shown) {
 	border-color: grey;
-	box-shadow:0 0 8px 0 white;
+	box-shadow:0 0 0px 0 white;
 }
 
 input:not([type="submit"]) + .input-requirements {
