@@ -1,32 +1,62 @@
 {
     "Przelewy": [
         {
-            "id": "50",
-            "numerPrzychodzacy": "PL07123456785968155681541730",
-            "numerWychodzacy": "PL07133356785968155681541730",
-            "tytul": "pierwszy",
+            "id": "70",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test70",
             "nazwa": "xxxxx",
-            "kwota": "161",
+            "kwota": "100",
             "data": "2021-01-23",
             "id_status": "2"
         },
         {
-            "id": "51",
-            "numerPrzychodzacy": "PL07123456785968155681541730",
-            "numerWychodzacy": "PL07133356785968155681541730",
-            "tytul": "drugi",
+            "id": "71",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test71",
             "nazwa": "xxxxx",
-            "kwota": "161",
+            "kwota": "250",
             "data": "2021-01-23",
             "id_status": "2"
         },
         {
-            "id": "52",
-            "numerPrzychodzacy": "PL07123456785968155681541730",
-            "numerWychodzacy": "PL07133356785968155681541730",
-            "tytul": "trzeci",
+            "id": "72",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test72",
             "nazwa": "xxxxx",
-            "kwota": "161",
+            "kwota": "20",
+            "data": "2021-01-23",
+            "id_status": "2"
+        },
+        {
+            "id": "73",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test73",
+            "nazwa": "xxxxx",
+            "kwota": "400",
+            "data": "2021-01-23",
+            "id_status": "2"
+        },
+        {
+            "id": "74",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test74",
+            "nazwa": "xxxxx",
+            "kwota": "2500",
+            "data": "2021-01-23",
+            "id_status": "2"
+        },
+        {
+            "id": "75",
+            "numerZlecajacego": "PL07123456785968155681541730",
+            "numerOdbiorcy": "PL07133356785968155681541730",
+            "tytul": "test75",
+            "nazwa": "xxxxx",
+            "kwota": "999",
             "data": "2021-01-23",
             "id_status": "2"
         }
