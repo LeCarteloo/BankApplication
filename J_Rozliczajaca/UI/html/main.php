@@ -32,19 +32,19 @@
                         
             case 'home':
                 default;
-                include $_SERVER['DOCUMENT_ROOT'].'/UI/html/home.php';
+                include $_SERVER['DOCUMENT_ROOT'].'/J_rozliczajaca/UI/html/home.php';
                 break;
 
             case 'akceptacja_przelewow':
-                include $_SERVER['DOCUMENT_ROOT'].'/UI/html/akceptacja_przelewow.php';
+                include $_SERVER['DOCUMENT_ROOT'].'/J_rozliczajaca/UI/html/akceptacja_przelewow.php';
                 break;
 
             case 'przelewy':
-                include $_SERVER['DOCUMENT_ROOT'].'/UI/html/przelewy.php';
+                include $_SERVER['DOCUMENT_ROOT'].'/J_rozliczajaca/UI/html/przelewy.php';
                 break;
 
             case 'historia_przelewow':
-                include $_SERVER['DOCUMENT_ROOT'].'/UI/html/historia_przelewow.php';
+                include $_SERVER['DOCUMENT_ROOT'].'/J_rozliczajaca/UI/html/historia_przelewow.php';
                 break; 
         }
     ?>
