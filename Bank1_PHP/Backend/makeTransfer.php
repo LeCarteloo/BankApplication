@@ -20,8 +20,8 @@
   // sprawdzanie czy dane nie sa puste
   foreach($data->Przelewy as $key => $value) {
 
-    if (!empty($value->numerPrzychodzacy) &&
-    !empty($value->numerWychodzacy) &&
+    if (!empty($value->numerZlecajacego) &&
+    !empty($value->numerOdbiorcy) &&
     !empty($value->tytul) &&
     !empty($value->nazwa) &&
     !empty($value->kwota) &&
@@ -30,8 +30,8 @@
     !empty($value->type)) {
 
     // ustawienie wartosci towaru
-    $transfer->numerPrzychodzacy           = $value->numerPrzychodzacy;
-    $transfer->numerWychodzacy            = $value->numerWychodzacy;
+    $transfer->numerZlecajacego           = $value->numerZlecajacego;
+    $transfer->numerOdbiorcy            = $value->numerOdbiorcy;
     $transfer->tytul = $value->tytul;
     $transfer->nazwa      = $value->nazwa;
     $transfer->kwota      = $value->kwota;

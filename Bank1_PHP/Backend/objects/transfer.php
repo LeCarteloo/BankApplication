@@ -9,8 +9,8 @@ class Transfer{
   public $id;
   public $id_status;
 
-  public $numerPrzychodzacy;
-  public $numerWychodzacy;
+  public $numerZlecajacego;
+  public $numerOdbiorcy;
   public $tytul;
   public $nazwa;
   public $kwota;
@@ -57,7 +57,7 @@ class Transfer{
 
           $makeTransferQuery = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount';
           UPDATE user SET balance ='$balanceOut' WHERE bankNumber='$outAccount';
-          INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1,'$type');";
+          INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',1,'$type');";
 
           $stmtTransfer = $this->connection->prepare($makeTransferQuery);
           $stmtTransfer->execute();
@@ -71,7 +71,7 @@ class Transfer{
    $date = date("Y-m-d");
 
    $makeExternalTransferQuery = "UPDATE user SET balance ='$balanceUser' WHERE bankNumber='$userAccount';
-   INSERT INTO historia (numerPrzychodzacy, numerWychodzacy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',2,'$type');";
+   INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES ('$userAccount', '$outAccount', '$title', '$name', '$amount', '$date',2,'$type');";
 
    $stmtExternalTransfer = $this->connection->prepare($makeExternalTransferQuery);
    $stmtExternalTransfer->execute();
@@ -111,14 +111,14 @@ class Transfer{
      // zapytanie do wstawiania rekordu
         $query = "INSERT INTO " . $this->tableHistory . "
         SET
-        numerPrzychodzacy=:numerPrzychodzacy, numerWychodzacy=:numerWychodzacy, tytul=:tytul, nazwa=:nazwa, kwota=:kwota, data=:data, id_status=:id_status, type=:type;
-        UPDATE user SET balance = (SELECT balance FROM user WHERE bankNumber=:numerPrzychodzacy) + :kwota WHERE bankNumber=:numerPrzychodzacy;";
+        numerZlecajacego=:numerZlecajacego, numerOdbiorcy=:numerOdbiorcy, tytul=:tytul, nazwa=:nazwa, kwota=:kwota, data=:data, id_status=:id_status, type=:type;
+        UPDATE user SET balance = (SELECT balance FROM user WHERE bankNumber=:numerZlecajacego) + :kwota WHERE bankNumber=:numerZlecajacego;";
         // przygotowanie zapytania
         $stmt  = $this->connection->prepare($query);
 
         // zabezpieczenie
-        $this->numerPrzychodzacy    = htmlspecialchars(strip_tags($this->numerPrzychodzacy));
-        $this->numerWychodzacy       = htmlspecialchars(strip_tags($this->numerWychodzacy));
+        $this->numerZlecajacego    = htmlspecialchars(strip_tags($this->numerZlecajacego));
+        $this->numerOdbiorcy       = htmlspecialchars(strip_tags($this->numerOdbiorcy));
         $this->tytul        = htmlspecialchars(strip_tags($this->tytul));
         $this->nazwa = htmlspecialchars(strip_tags($this->nazwa));
         $this->kwota   = htmlspecialchars(strip_tags($this->kwota));
@@ -126,8 +126,8 @@ class Transfer{
         $this->id_status   = htmlspecialchars(strip_tags($this->id_status));
         $this->type   = htmlspecialchars(strip_tags($this->type));
         // podłączenie wartości do zapytania
-        $stmt->bindParam(":numerPrzychodzacy", $this->numerPrzychodzacy);
-        $stmt->bindParam(":numerWychodzacy", $this->numerWychodzacy);
+        $stmt->bindParam(":numerZlecajacego", $this->numerZlecajacego);
+        $stmt->bindParam(":numerOdbiorcy", $this->numerOdbiorcy);
         $stmt->bindParam(":tytul", $this->tytul);
         $stmt->bindParam(":nazwa", $this->nazwa);
         $stmt->bindParam(":kwota", $this->kwota);

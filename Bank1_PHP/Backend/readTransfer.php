@@ -28,8 +28,8 @@ if ($num > 0) {
 
         $transferItem = array(
             "id" => $id,
-            "numerPrzychodzacy" => $numerPrzychodzacy,
-            "numerWychodzacy" => $numerWychodzacy,
+            "numerPrzychodzacy" => $numerZlecajacego,
+            "numerWychodzacy" => $numerOdbiorcy,
             "tytul" => $tytul,
             "nazwa" => $nazwa,
             "kwota" => $kwota,
