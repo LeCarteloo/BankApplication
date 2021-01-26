@@ -7,6 +7,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <div id="content">
     <div id="odstpet"></div>
     <div id="baner">
@@ -27,8 +28,9 @@
             <li><a href="przelewZewnetrzny.jsp">Przelewy</a></li>
             <li><a th:href="@{/historia}" >Historia</a></li>
             <li style="float:right;">
-                <div class="daned"><span th:text="*{user.getName()}"></span></div>
-                <div class="daned"><span th:text="*{user.getSurname()}"></span></div>
+                <div class="daned"><span th:text= "${session.name}"></span>
+                </div>
+                <div class="daned"><span th:text= "${session.surname}"></span></div>
             </li>
         </ul>
     </div>
@@ -41,7 +43,7 @@
                     Visa Konto
                 </div>
                 <div id="numerkonta">
-                    <span th:text="*{user.getBankNumber()}"></span>
+                    <span th:text= "${session.bankNumber}"></span>
                 </div>
             </div>
 
@@ -50,7 +52,7 @@
                     Saldo bieżące
                 </div>
                 <div class="srodkiPLN">
-                    <span th:text="*{user.getBalance()}"></span><span class="PLN">PLN</span>
+                    <span th:text= "${session.balance}"></span><span class="PLN">PLN</span>
                 </div>
             </div>
             <div id="sekcja3">
