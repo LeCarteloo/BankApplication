@@ -1,4 +1,5 @@
-<%@ page import="java.sql.*" %><%--
+<%@ page import="java.sql.*" %>
+<%@ page import="bankB.Database" %><%--
   Created by IntelliJ IDEA.
   User: h
   Date: 18.01.2021
@@ -6,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="user" class="bankB.user"
+<jsp:useBean id="user" class="bankB.User"
              scope="session"></jsp:useBean>
 
 <jsp:setProperty property="*" name="user" />
@@ -63,14 +64,9 @@
             </div>
 <%
             Statement statement = null;
-            Connection conn = null;
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost:3306/bank2";
-                String user2 = "root";
-                String password = "";
 
-                conn = DriverManager.getConnection(url, user2, password);
+    try{
+        Connection conn = Database.getConnection();
 
                 PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM historia WHERE numerPrzychodzacy = ? OR numerWychodzacy = ?");
                 pstmt.setString(1, user.getBankNumber());

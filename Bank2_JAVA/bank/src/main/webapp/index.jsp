@@ -1,11 +1,12 @@
 <%@ page import="java.sql.*" %>
+<%@ page import="bankB.Database" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="pl">
 <head>
     <meta charset="utf-8">
     <style> <%@include file="/WEB-INF/style.css" %> </style>
 
-    <jsp:useBean id="user" class="bankB.user"
+    <jsp:useBean id="user" class="bankB.User"
                  scope="session"></jsp:useBean>
 
     <jsp:setProperty property="*" name="user" />
@@ -51,14 +52,8 @@
             String login = request.getParameter("login");
             String haslo = request.getParameter("haslo");
             Statement statement = null;
-            Connection conn = null;
             try{
-                Class.forName("com.mysql.jdbc.Driver");
-                String url       = "jdbc:mysql://localhost:3306/bank2";
-                String user2      = "root";
-                String password  = "";
-
-                conn = DriverManager.getConnection(url, user2, password);
+                Connection conn = Database.getConnection();
 
                 PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE login=? AND password=?");
                 pstmt.setString(1, login);

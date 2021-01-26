@@ -1,30 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: h
-  Date: 18.01.2021
-  Time: 11:49
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="user" class="bankB.User"
-             scope="session"></jsp:useBean>
 
-<jsp:setProperty property="*" name="user" />
+<html xmlns:th="http://www.thymeleaf.org">
 
-
-<html lang="pl">
-<%
-    if(user.getName() == null) {
-%>
-<script>
-    location.href = "/";
-</script>
-<%
-    }
-%>
 <head>
-    <meta charset="utf-8">
-    <style> <%@include file="/WEB-INF/zalogowany.css" %> </style>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/zalogowany.css}" rel="stylesheet" />
+    <title>Title</title>
 </head>
 <body>
 <div id="content">
@@ -43,12 +23,12 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="zalogowany.jsp">Strona główna</a></li>
+            <li><a th:href="@{/zalogowany}">Strona główna</a></li>
             <li><a href="przelewZewnetrzny.jsp">Przelewy</a></li>
-            <li><a href="historia.jsp">Historia</a></li>
+            <li><a th:href="@{/historia}" >Historia</a></li>
             <li style="float:right;">
-                <div class="daned"><% out.println(user.getName()); %></div>
-                <div class="daned"><% out.println(user.getSurname()); %></div>
+                <div class="daned"><span th:text="*{user.getName()}"></span></div>
+                <div class="daned"><span th:text="*{user.getSurname()}"></span></div>
             </li>
         </ul>
     </div>
@@ -61,8 +41,7 @@
                     Visa Konto
                 </div>
                 <div id="numerkonta">
-
-                    <% out.println(user.getBankNumber()); %>
+                    <span th:text="*{user.getBankNumber()}"></span>
                 </div>
             </div>
 
@@ -71,7 +50,7 @@
                     Saldo bieżące
                 </div>
                 <div class="srodkiPLN">
-                    <% out.println(user.getBalance()); %><span class="PLN">PLN</span>
+                    <span th:text="*{user.getBalance()}"></span><span class="PLN">PLN</span>
                 </div>
             </div>
             <div id="sekcja3">
