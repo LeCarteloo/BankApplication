@@ -22,12 +22,12 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="zalogowany.jsp">Strona główna</a></li>
+            <li><a th:href="@{/zalogowany}">Strona główna</a></li>
             <li><a href="przelewZewnetrzny.jsp">Przelewy</a></li>
-            <li><a href="historia.jsp">Historia</a></li>
+            <li><a th:href="@{/historia}" >Historia</a></li>
             <li style="float:right;">
-                <div class="daned"><span th:text="*{user.getName()}"></span></div>
-                <div class="daned"><span th:text="*{user.getSurname()}"></span></div>
+                <div class="daned"><span th:text= "${session.name}"></span></div>
+                <div class="daned"><span th:text= "${session.surname}"></span></div>
             </li>
         </ul>
     </div>
