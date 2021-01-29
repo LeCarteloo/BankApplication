@@ -65,18 +65,18 @@
 						else
 						{
 
-							$sql = "SELECT * FROM historia WHERE numerPrzychodzacy='$numerK' OR numerWychodzacy='$numerK'";
+							$sql = "SELECT * FROM historia WHERE numerZlecajacego='$numerK' OR numerOdbiorcy='$numerK'";
 							$result = $conn->query($sql);
 
 						if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()) {
-								if($row["numerPrzychodzacy"]==$numerK){
+								if($row["numerZlecajacego"]==$numerK){
 								echo '
 								<div class="rekord">
 									<div id="datarr">'.$row["data"].'</div>
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
-									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
+									<div id="nrrr">'.$row["numerOdbiorcy"].'</div>
 									<div id="kwotarr">-'.$row["kwota"].' zł</div>
 								</div>';
 								}
@@ -87,7 +87,7 @@
 									<div id="datarr">'.$row["data"].'</div>
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
-									<div id="nrrr">'.$row["numerWychodzacy"].'</div>
+									<div id="nrrr">'.$row["numerOdbiorcy"].'</div>
 									<div id="kwotarrd">'.$row["kwota"].' zł</div>
 								</div>';
 								}

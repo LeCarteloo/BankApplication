@@ -31,12 +31,12 @@
 <?php
 			if(isset($_SESSION['success']))
 				{
-					// echo '<script>Swal.fire({
-  				// 	title: "Sukces",
-  				// 	text: "Przelew wykonany pomyślnie!",
-  				// 	icon: "success",
-  				// 	confirmButtonText: "Zamknij",
-					// });</script>';
+					 echo '<script>Swal.fire({
+  				 	title: "Sukces",
+  				 	text: "Przelew wykonany pomyślnie!",
+  				 	icon: "success",
+  				 	confirmButtonText: "Zamknij",
+					 });</script>';
 					unset($_SESSION['success']);
 				}
 ?>
@@ -73,7 +73,9 @@
 						</div>
 						<div id="moje_konto">
 							<input type="hidden" id="balance" value="<?php  echo $_SESSION['saldo'];?>">
-							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br> <?php  echo $_SESSION['nr_konta'];?></div>
+								<input type="hidden" id="accountNum" value="<?php  echo $_SESSION['nr_konta'];?>">
+							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br>
+							 <?php  echo $_SESSION['nr_konta'];?></div>
 						</div>
 						<div class="etap">
 							Dane odbiorcy przelewu
@@ -94,6 +96,7 @@
 									<ul class ="input-requirements">
 	                  <li>Musi zawierać tylko cyfry</li>
 	                  <li>Musi zawierać dwadzieścia sześć cyfr</li>
+										<li>Inny numer niż swój</li>
 	                </ul>
 									</label>
 								</div>
@@ -118,6 +121,7 @@
 									<ul class ="input-requirements">
 	                  <li>Musi zawierać tylko cyfry</li>
 	                  <li>Musisz mieć taką kwote na koncie</li>
+										<li>Więcej niż zero</li>
 	                </ul>
 									</label>
 								</div>

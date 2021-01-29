@@ -77,6 +77,14 @@ var numberValidityChecks = [
 		},
 		invalidityMessage: 'Tylko cyfry są dozwolone',
 		element: document.querySelector('label[for="number"] .input-requirements li:nth-child(1)')
+	},
+	{
+		isInvalid: function(input) {
+			var inp = "PL";
+			return inp.concat(numberInput.value) == numUser.value;
+		},
+		invalidityMessage: 'Nie możesz wysłać przelewu do samego siebie',
+		element: document.querySelector('label[for="number"] .input-requirements li:nth-child(3)')
 	}
 ];
 
@@ -94,6 +102,13 @@ var amountValidityChecks = [
 		},
 		invalidityMessage: 'Nie masz tyle pieniędzy na koncie',
 		element: document.querySelector('label[for="amount"] .input-requirements li:nth-child(2)')
+	},
+	{
+		isInvalid: function(input) {
+			return parseFloat(amountInput.value) < 1;
+		},
+		invalidityMessage: 'Nie możesz przelać zero złotych',
+		element: document.querySelector('label[for="amount"] .input-requirements li:nth-child(3)')
 	}
 ];
 
@@ -106,6 +121,7 @@ var amountValidityChecks = [
 var numberInput = document.getElementById('numer');
 var amountInput = document.getElementById('kwota');
 var balanceUser = document.getElementById('balance');
+var numUser = document.getElementById('accountNum');
 
 numberInput.CustomValidation = new CustomValidation(numberInput);
 numberInput.CustomValidation.validityChecks = numberValidityChecks;
