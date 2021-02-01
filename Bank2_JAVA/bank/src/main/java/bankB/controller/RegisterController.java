@@ -44,7 +44,7 @@ public class RegisterController {
 
                 } else {
                     pstmt = conn.prepareStatement("INSERT INTO user (name, surname, login, password, pesel, email, telephoneNumber, location, street, houseNumber, postcode, bankNumber, balance)" +
-                            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)");
+                            "VALUES (?, ?, ?, PASSWORD(?), ?, ?, ?, ?, ?, ?, ?, ?, 0)");
                     pstmt.setString(1, imie);
                     pstmt.setString(2, nazwisko);
                     pstmt.setString(3, login);

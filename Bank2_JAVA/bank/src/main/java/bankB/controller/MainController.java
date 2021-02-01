@@ -55,7 +55,7 @@ public class MainController {
 
         try {
             Connection conn = Database.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE login=? AND password=?");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE login=? AND password=PASSWORD(?)");
             pstmt.setString(1, login);
             pstmt.setString(2, password);
 

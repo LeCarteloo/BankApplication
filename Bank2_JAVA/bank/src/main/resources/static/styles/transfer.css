@@ -257,9 +257,9 @@ li a:hover {
     box-sizing:border-box;
     transition:.3s;
     outline:none;
-    padding:2 5;
+    padding:2px 5px;
     margin-left:10px;
-    width:300px;
+    width:280px;
     height:30px;
 }
 
