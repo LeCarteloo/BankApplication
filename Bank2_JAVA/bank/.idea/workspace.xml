@@ -6,14 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/RegisterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <workItem from="1611664919505" duration="11679000" />
       <workItem from="1612012906140" duration="21170000" />
       <workItem from="1612093626180" duration="5555000" />
-      <workItem from="1612176310994" duration="8824000" />
+      <workItem from="1612176310994" duration="14217000" />
     </task>
     <task id="LOCAL-00001" summary="Session">
       <created>1611668625663</created>

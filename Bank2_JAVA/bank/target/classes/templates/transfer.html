@@ -10,7 +10,7 @@
 <div id="content">
     <div id="odstpet"></div>
     <div id="baner">
-        <a href="index.php"><div id="logo">
+        <a th:href="@{index}"><div id="logo">
             <div id="logo_text">
                 BardzoZły
             </div>
@@ -41,7 +41,7 @@
                 <div id="moje_konto">
                     <input type="hidden" id="balance" th:value="${session.balance}">
                     <input type="hidden" id="accountNum" th:value="${session.bankNumber}">
-                    <div id="mk_text">Visa konto (<span th:text="${session.balance}"></span>PLN)<br>
+                    <div id="mk_text">Mastercard konto (<span th:text="${session.balance}"></span> PLN)<br>
                         <span th:text="${session.bankNumber}"></span>
                 </div>
                 <div class="etap">

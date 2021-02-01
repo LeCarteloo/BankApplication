@@ -7,17 +7,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Controller
 public class MainController {
 
     @GetMapping("/")
     public String showIndex(HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            return "login";
+        }
+
 
         request.getSession().setAttribute("bladLogowania", false);
         return "index";
@@ -30,7 +36,13 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String showLogin() {
+    public String showLogin(HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+        if(session == null)
+        {
+            return "index";
+        }
 
         return "login";
     }

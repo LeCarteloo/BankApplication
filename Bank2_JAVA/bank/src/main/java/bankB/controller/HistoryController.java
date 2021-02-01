@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +20,11 @@ public class HistoryController {
 
     @GetMapping("/history")
     public String showHistory(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+        if(session == null)
+        {
+            return "index";
+        }
         try{
             Connection conn = Database.getConnection();
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM historia WHERE numerZlecajacego=? OR numerOdbiorcy=?");

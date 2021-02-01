@@ -38,7 +38,7 @@
                 <div id="datar">Data przelewu</div>
                 <div id="tytulr">Tytuł przelewu</div>
                 <div id="nazwar">Odbiorca</div>
-                <div id="nrr">Z numeru konta</div>
+                <div id="nrr">Na numer konta</div>
                 <div id="kwotar">Kwota</div>
             </div>
             <div class="rekord" th:each="transfer : ${transfers}">
@@ -46,8 +46,8 @@
                 <div id="tytulrr" th:text="${transfer.tytul}"></div>
                 <div id="nazwarr" th:text="${transfer.odbiorca}"></div>
                 <div id="nrrr" th:text="${transfer.nrKonta}"></div>
-                <span th:if="${transfer.nrKonta == session.bankNumber}"><div id="kwotarr" th:text="${'-' + transfer.kwota}"></div></span>
-                <span th:unless="${transfer.nrKonta == session.bankNumber}"><div id="kwotarrd" th:text="${transfer.kwota}">-</div></span>
+                <span th:unless="${transfer.nrKonta == session.bankNumber}"><div id="kwotarr" th:text="${'-' + transfer.kwota}"></div></span>
+                <span th:if="${transfer.nrKonta == session.bankNumber}"><div id="kwotarrd" th:text="${transfer.kwota}">-</div></span>
             </div>
 
             <div class="odstep"></div>

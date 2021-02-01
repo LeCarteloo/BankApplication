@@ -28,7 +28,8 @@ public class RegisterController {
         String ulica = request.getParameter("ulica");
         String numer_domu = request.getParameter("numer_domu");
         String kod = request.getParameter("kod");
-        String numerKonta = Database.getBankCountry() + Database.getBankCode() + ThreadLocalRandom.current().nextLong(1000000000000000L, 9999999999999999L);
+        String numerKonta = Database.getBankCode() + ThreadLocalRandom.current().nextLong(1000000000000000L, 9999999999999999L);
+
         boolean check1 = "checked".equals(request.getParameter("check1"));
         boolean check2 = "checked".equals(request.getParameter("check2"));
         boolean check3 = "checked".equals(request.getParameter("check3"));

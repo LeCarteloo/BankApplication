@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.crypto.Data;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +16,12 @@ import java.sql.SQLException;
 public class TransferController {
 
     @GetMapping("/transfer")
-    public String showTransfer() {
+    public String showTransfer(HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            return "index";
+        }
 
         return "transfer";
     }
@@ -41,11 +46,11 @@ public class TransferController {
                 if (rs.getRow() == 1) {
                     pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
                     pstmt.setDouble(1, (kwotaZlecajacego - kwota));
-                    pstmt.setString(2, Database.getBankCountry() + (String)request.getSession().getAttribute("bankNumber"));
+                    pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
                     pstmt.executeUpdate();
                     request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
 
-                    pstmt = conn.prepareStatement( "UPDATE user SET balance =? WHERE bankNumber=?;");
+                    pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
                     pstmt.setDouble(1, (rs.getDouble("balance") + kwota));
                     pstmt.setString(2, Database.getBankCountry() + nrKonta);
                     pstmt.executeUpdate();
