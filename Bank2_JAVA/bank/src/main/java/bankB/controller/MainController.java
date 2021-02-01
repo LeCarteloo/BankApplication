@@ -1,11 +1,8 @@
 package bankB.controller;
 
 import bankB.Database;
-import bankB.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Controller
 public class MainController {
@@ -25,24 +23,23 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/historia")
-    public String showForm(HttpServletRequest request) {
-try{
-    Connection conn = Database.getConnection();
-    PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM historia WHERE numerPrzychodzacy=? OR numerWychodzacy=?");
-    pstmt.setString(1, (String) request.getSession().getAttribute("bankNumber"));
-    pstmt.setString(2, (String) request.getSession().getAttribute("bankNumber"));
+    @GetMapping("/register")
+    public String showRegister() {
 
-    ResultSet rs = pstmt.executeQuery();
-}catch(SQLException e){
-    e.printStackTrace();
-}
-
-        return "historia";
+        return "register";
     }
 
+    @GetMapping("/login")
+    public String showLogin() {
+
+        return "login";
+    }
+
+
+
+
     @PostMapping("/login")
-    public String submitForm(@RequestParam("login") String login, @RequestParam("password") String password, HttpServletRequest request) {
+    public String loginForm(@RequestParam("login") String login, @RequestParam("password") String password, HttpServletRequest request) {
 
         try {
             Connection conn = Database.getConnection();
@@ -58,10 +55,10 @@ try{
                 request.getSession().setAttribute("isLogged", true);
                 request.getSession().setAttribute("name", rs.getString(2));
                 request.getSession().setAttribute("surname", rs.getString(3));
-                request.getSession().setAttribute("bankNumber", rs.getString(13));
+                request.getSession().setAttribute("bankNumber", rs.getString(13).substring(2));
                 request.getSession().setAttribute("balance", rs.getDouble(14));
                 request.getSession().setAttribute("bladLogowania", false);
-                return "zalogowany";
+                return "login";
             }
             else{
                 request.getSession().setAttribute("bladLogowania", true);

@@ -23,4 +23,14 @@ public class Database
         }
         return connection;
     }
+    private static final String bankCode = "87654321";
+    private static final String bankCountry = "PL";
+
+    public static String getBankCode() {
+        return bankCode;
+    }
+
+    public static String getBankCountry() {
+        return bankCountry;
+    }
 }
