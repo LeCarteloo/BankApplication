@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="Session" />
+    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="Session">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,17 +53,6 @@
     <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="jsp-boot-tst" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bankB.Application" />
@@ -76,6 +72,7 @@
       <workItem from="1611664919505" duration="11679000" />
       <workItem from="1612012906140" duration="21170000" />
       <workItem from="1612093626180" duration="5555000" />
+      <workItem from="1612176310994" duration="1130000" />
     </task>
     <task id="LOCAL-00001" summary="Session">
       <created>1611668625663</created>

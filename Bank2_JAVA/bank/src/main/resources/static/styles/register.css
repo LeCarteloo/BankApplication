@@ -56,7 +56,7 @@ body{
 #logo{
     width:200px;
     height:70px;
-    background-color:#338333;
+    background-color:darkgreen;
     font-family:"Segoe UI";
     margin-left:100px;
 }
@@ -97,7 +97,7 @@ body{
 }
 
 .boxlewa i{
-    color:#338333;
+    color:darkgreen;
     font-size:80px;
     margin-right:15px;
     padding:10px 0 0 0;
@@ -188,7 +188,7 @@ input[type=password]{
 
 #przycisk input{
     border:0;
-    background-color:#338333;
+    background-color:darkgreen;
     color:#fff;
     font-size:18px;
     width:100px;
@@ -200,9 +200,9 @@ input[type=password]{
 }
 
 #przycisk input:hover{
-    border:2px solid #338333;
+    border:2px solid darkgreen;
     background-color:#fff;
-    color:#338333;
+    color:darkgreen;
     cursor:pointer;
 }
 
@@ -216,7 +216,7 @@ input[type=password]{
 
 #przyciskrej input{
     border:0;
-    background-color:#338333;
+    background-color:darkgreen;
     color:#fff;
     font-size:18px;
     width:250px;
@@ -227,9 +227,9 @@ input[type=password]{
 }
 
 #przyciskrej input:hover{
-    border:2px solid #338333;
+    border:2px solid darkgreen;
     background-color:#fff;
-    color:#338333;
+    color:darkgreen;
     cursor:pointer;
 }
 
@@ -272,7 +272,7 @@ input[type=password]{
 
 .wybor label input[type="checkbox"]:checked ~ span{
     background-color:#fff;
-    border:2px solid #338333;
+    border:2px solid darkgreen;
     background:#1f1f1f;
 }
 
@@ -315,7 +315,7 @@ input[type=password]{
 }
 .header{
     height: 68px;
-    background: #338333;
+    background: darkgreen;
     overflow: hidden;
     border-radius: 3px 3px 0 0;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
@@ -338,7 +338,7 @@ input[type=password]{
 .fa-check-circle{
     font-size: 50px;
     margin: 30px 0 0 160px;
-    color: #338333;
+    color: darkgreen;
     font-weight: bold;
     height: 80px;
     width: 80px;
@@ -353,15 +353,15 @@ input[type=password]{
     margin-top: 20px;
     width: 100%;
     height: 1px;
-    background: #338333;
+    background: darkgreen;
 }
 .close-btn{
     font-weight: bold;
     position: absolute;
     bottom: 12px;
     right: 25px;
-    border: 2px solid #338333;
-    background: #338333;
+    border: 2px solid darkgreen;
+    background: darkgreen;
     border-radius: 3px;
     color: white;
     padding: 8px 10px;
@@ -371,7 +371,7 @@ input[type=password]{
 .close-btn:hover{
     font-weight: bold;
     background: white;
-    color: #338333;
+    color: darkgreen;
 }
 
 input:not([type="submit"]):not(:placeholder-shown):valid {
@@ -380,13 +380,13 @@ input:not([type="submit"]):not(:placeholder-shown):valid {
 }
 
 input:not([type="submit"]):focus:invalid {
-    border-color: #338333;
-    box-shadow:0 0 8px 0 #338333;
+    border-color: darkgreen;
+    box-shadow:0 0 8px 0 darkgreen;
 }
 
 input:not([type="submit"]):not(:placeholder-shown) {
-    border-color: green;
-    box-shadow:0 0 8px 0 green;
+    border-color: darkgreen;
+    box-shadow:0 0 8px 0 darkgreen;
 }
 
 input:not([type="submit"]) + .input-requirements {

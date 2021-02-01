@@ -4,24 +4,24 @@
 }
 
 body{
-    background-color:#EBEBEB;
+    background-color:#292929;
     text-decoration:none;
 }
 
 #content{
     min-height: 100vh;
-    background-color:#fff;
+    background-color:#292929;
 }
 
 #stopka{
     width:100%;
     bottom: 0;
     height: 50px;
-    border-top:1px solid #ccc;
+    border-top:1px solid #141414;
     text-align:center;
     line-height:50px;
     color:#737373;
-    margin-top:15px;
+    margin-top:20px;
 }
 
 #odstpet{
@@ -38,7 +38,7 @@ body{
 #logo{
     width:200px;
     height:70px;
-    background-color:#BC004F;
+    background-color:darkgreen;
     font-family:"Segoe UI";
     margin-left:40px;
 }
@@ -47,7 +47,7 @@ body{
     color:#fff;
     font-weight:600;
     float:left;
-    width:96%;
+    width:95%;
     height:35px;
     font-size:20px;
     border-bottom:1px solid #fff;
@@ -66,7 +66,7 @@ body{
 #wyloguj{
     float:right;
     font-size:21px;
-    color:#BC004F;
+    color:darkgreen;
     cursor:pointer;
 }
 
@@ -89,18 +89,22 @@ body{
 #menu{
     width:1100px;
     height:50px;
-    background-color:#1E2332;
+    background-color:#1f1f1f;
     margin-top:50px;
     margin-left:auto;
     margin-right:auto;
+    border:1px solid #1a1a1a;
+    border-bottom:0;
 }
 
 #tresc{
     width:1100px;
     min-height:720px;
-    background-color:#d9d9d9;
+    background-color:#121212;
     margin-left:auto;
     margin-right:auto;
+    border:1px solid #1a1a1a;
+    border-top:0;
 }
 
 ul {
@@ -119,16 +123,17 @@ li a {
     width: 130px;
     text-decoration: none;
     color:#Fff;
-    background-color:#1E2332;
+    background-color:#191f24;
     width:200px;
     height:50px;
     line-height:50px;
     margin: 0px 1px 1px 0px;
+    border-right:1px solid #121212;
 
 }
 
 li a:hover {
-    background: #3a4463;
+    background: #232a31;
 }
 
 #trescc{
@@ -147,10 +152,11 @@ li a:hover {
 #inforekord{
     width:900px;
     height:30px;
-    background-color:silver;
+    background-color:#36363c;
     margin-left:auto;
     margin-right:auto;
     border-bottom:1px solid black;
+    color:#d1d1d1;
 }
 
 #datar{
@@ -191,7 +197,7 @@ li a:hover {
 
 #nrr{
     height:30px;
-    width:220px;
+    width:245px;
     padding:0 0 0 5px;
     line-height:30px;
     font-size:16px;
@@ -203,7 +209,7 @@ li a:hover {
 
 #kwotar{
     height:30px;
-    width:110px;
+    width:85px;
     padding:0 0 0 5px;
     line-height:30px;
     font-size:16px;
@@ -265,7 +271,7 @@ li a:hover {
 #kwotarr{
     height:30px;
     width:110px;
-    padding:0 0 0 5px;
+    padding:0 0 0 15px;
     line-height:50px;
     font-size:18px;
     font-family:"Segoe UI";
@@ -278,7 +284,7 @@ li a:hover {
 #kwotarrd{
     height:30px;
     width:110px;
-    padding:0 0 0 5px;
+    padding:0 0 0 15px;
     line-height:50px;
     font-size:18px;
     font-family:"Segoe UI";
@@ -296,8 +302,9 @@ li a:hover {
 .rekord{
     width:900px;
     height:50px;
-    background-color:#fff;
+    background-color:#191f24;
     margin-left:auto;
     margin-right:auto;
     border-bottom:1px solid black;
+    color:#e1e1e1;
 }
