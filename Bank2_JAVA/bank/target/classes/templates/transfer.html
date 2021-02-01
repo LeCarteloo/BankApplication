@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/styles/transfer.css}"/>
@@ -10,19 +10,15 @@
 <div id="content">
     <div id="odstpet"></div>
     <div id="baner">
-        <a th:href="@{/login}">
-            <div id="logo">
-                <div id="logo_text">
-                    BardzoZly
-                </div>
-                <div id="logo_text2">
-                    Bank
-                </div>
+        <a href="index.php"><div id="logo">
+            <div id="logo_text">
+                BardzoZły
             </div>
-        </a>
-        <a th:href="@{/logout}">
-            <div id="wyloguj"><i class="fas fa-power-off"></i>Wyloguj</div>
-        </a>
+            <div id="logo_text2">
+                Bank
+            </div>
+        </div></a>
+        <a th:href="@{/logout}"><div id="wyloguj"> <i class="fas fa-power-off"></i>Wyloguj </div></a>
     </div>
     <div id="menu">
         <ul>
@@ -30,22 +26,23 @@
             <li><a th:href="@{/transfer}">Przelewy</a></li>
             <li><a th:href="@{/history}">Historia</a></li>
             <li style="float:right;">
-                <div class="daned"><span th:text="${session.name}"></span></div>
-                <div class="daned"><span th:text="${session.surname}"></span></div>
+                <div class="daned"><span th:text= "${session.name}"></span></div>
+                <div class="daned"><span th:text= "${session.surname}"></span></div>
             </li>
         </ul>
     </div>
     <div id="tresc">
         <div id="rodzaj">Przelewy</div>
         <div id="ttresc">
-            <form action="#" autocomplete="off" id="przelewForm" method="POST" name="przelewForm" th:action="@{/login}">
+            <form action="#" th:action="@{/transfer}" method="POST" id="przelewForm" name="przelewForm" autocomplete="off">
                 <div class="etap">
                     Z konta
                 </div>
                 <div id="moje_konto">
-
-                    <div id="mk_text">Visa konto (<span th:text="${session.balance}"></span> PLN) <br>
-                        <span th:text="${session.bankNumber}"></span></div>
+                    <input type="hidden" id="balance" th:value="${session.balance}">
+                    <input type="hidden" id="accountNum" th:value="${session.bankNumber}">
+                    <div id="mk_text">Visa konto (<span th:text="${session.balance}"></span>PLN)<br>
+                        <span th:text="${session.bankNumber}"></span>
                 </div>
                 <div class="etap">
                     Dane odbiorcy przelewu
@@ -55,16 +52,15 @@
                     <div class="wejscie">
                         <div class="textt">Nazwa odbiorcy</div>
                         <div class="inputyy">
-                            <input class="wersja1" name="nazwa" placeholder="Nazwa odbiorcy" required type="text">
+                            <input type="text" name="nazwa" class="wersja1" placeholder="Nazwa odbiorcy" required>
                         </div>
                     </div>
                     <div class="wejscie">
                         <div class="textt">Numer konta</div>
                         <div class="inputyy">
-                            <label for="numer">
-                                <input class="wersja1" id="numer" name="numer" placeholder="Numer konta" required
-                                       type="text">
-                                <ul class="input-requirements">
+                            <label for="number">
+                                <input type="text" name="numer" class="wersja1" id="numer" placeholder="Numer konta" required>
+                                <ul class ="input-requirements">
                                     <li>Musi zawierać tylko cyfry</li>
                                     <li>Musi zawierać dwadzieścia sześć cyfr</li>
                                     <li>Inny numer niż swój</li>
@@ -81,15 +77,15 @@
                     <div class="wejscie2">
                         <div class="textt">Tytuł przelewu</div>
                         <div class="inputyy">
-                            <input class="wersja1" name="tytul" placeholder="Tytuł przelewu" required type="text">
+                            <input type="text" name="tytul" class="wersja1" placeholder="Tytuł przelewu" required>
                         </div>
                     </div>
                     <div class="wejscie2">
                         <div class="textt">Kwota</div>
                         <div class="inputyy">
-                            <label for="kwota">
-                                <input class="wersja2" id="kwota" name="kwota" placeholder="Kwota" required type="text">
-                                <ul class="input-requirements">
+                            <label for="amount">
+                                <input type="text" name="kwota" class="wersja2" id="kwota" placeholder="Kwota" required>
+                                <ul class ="input-requirements">
                                     <li>Musi zawierać tylko cyfry</li>
                                     <li>Musisz mieć taką kwote na koncie</li>
                                     <li>Więcej niż zero</li>
@@ -101,16 +97,14 @@
                     <div class="wejscie2">
                         <div class="textt">Data wykonania</div>
                         <div class="inputyy">
-                            <input class="wersja3" disabled id="datap" name="data" type="date">
-                            <div id="datad" onClick="datad()">+</div>
+                            <input type="date" name="data" id="datap" class="wersja3"><div id="datad" onClick="datad()">+</div>
                         </div>
                     </div>
                 </div>
                 <div class="etap"></div>
                 <div id="przyciski">
                     <div id="p1"><input type="reset" value="Wyczyść"></div>
-                    <div id="p2"><input id="wykonajPrzelew" name="wykonajPrzelew" type="submit" value="Wykonaj transfer">
-                    </div>
+                    <div id="p2"><input type="submit" value="Wykonaj przelew" name="wykonajPrzelew" id="wykonajPrzelew"></div>
                 </div>
 
             </form>
@@ -121,11 +115,10 @@
     </div>
 </div>
 
-<script src="scripts/transferScript.js"></script>
+<script th:src="@{scripts/transfer.js}"></script>
 <script>
     document.getElementById('datap').valueAsDate = new Date();
-
-    function datad() {
+    function datad(){
         document.getElementById('datap').valueAsDate = new Date();
 
     }

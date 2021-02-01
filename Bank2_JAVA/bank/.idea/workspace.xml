@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="Session">
+    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/history.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1nbhtPqLzLtXBCpD4sXruj9lX7m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,6 +64,19 @@
     <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="jsp-boot-tst" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bankB.Application" />
@@ -72,7 +96,7 @@
       <workItem from="1611664919505" duration="11679000" />
       <workItem from="1612012906140" duration="21170000" />
       <workItem from="1612093626180" duration="5555000" />
-      <workItem from="1612176310994" duration="1130000" />
+      <workItem from="1612176310994" duration="8824000" />
     </task>
     <task id="LOCAL-00001" summary="Session">
       <created>1611668625663</created>
@@ -81,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611668625663</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="css">
+      <created>1612177608373</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612177608373</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Session" />
-    <option name="LAST_COMMIT_MESSAGE" value="Session" />
+    <MESSAGE value="css" />
+    <option name="LAST_COMMIT_MESSAGE" value="css" />
   </component>
 </project>
