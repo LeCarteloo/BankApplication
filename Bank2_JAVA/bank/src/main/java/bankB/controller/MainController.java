@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Controller
 public class MainController {
@@ -20,13 +22,12 @@ public class MainController {
     public String showIndex(HttpServletRequest request) {
 
         HttpSession session = request.getSession(false);
-        if (session != null) {
-            return "login";
+        if (session == null) {
+            return "index";
         }
 
-
         request.getSession().setAttribute("bladLogowania", false);
-        return "index";
+        return "login";
     }
 
     @GetMapping("/register")
@@ -55,7 +56,7 @@ public class MainController {
 
         try {
             Connection conn = Database.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE login=? AND password=?");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE login=? AND password=PASSWORD(?)");
             pstmt.setString(1, login);
             pstmt.setString(2, password);
 

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="css">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/HistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" afterDir="false" />
-    </list>
+    <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="css" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,6 +45,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -100,7 +87,9 @@
       <workItem from="1611664919505" duration="11679000" />
       <workItem from="1612012906140" duration="21170000" />
       <workItem from="1612093626180" duration="5555000" />
-      <workItem from="1612176310994" duration="14217000" />
+      <workItem from="1612176310994" duration="29010000" />
+      <workItem from="1612254460873" duration="12198000" />
+      <workItem from="1612276489932" duration="734000" />
     </task>
     <task id="LOCAL-00001" summary="Session">
       <created>1611668625663</created>

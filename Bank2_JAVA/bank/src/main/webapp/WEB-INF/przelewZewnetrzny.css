@@ -1,28 +1,27 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
-@import '@sweetalert2/theme-dark/dark.css';
 *{
     margin:0;
 }
 
 body{
-    background-color:#292929;
+    background-color:#EBEBEB;
     text-decoration:none;
 }
 
 #content{
     min-height: 100vh;
-    background-color:#292929;
+    background-color:#fff;
 }
 
 #stopka{
     width:100%;
     bottom: 0;
     height: 50px;
-    border-top:1px solid #141414;
+    border-top:1px solid #ccc;
     text-align:center;
     line-height:50px;
     color:#737373;
-    margin-top:20px;
+    margin-top:15px;
 }
 
 #odstpet{
@@ -39,7 +38,7 @@ body{
 #logo{
     width:200px;
     height:70px;
-    background-color:darkgreen;
+    background-color:#BC004F;
     font-family:"Segoe UI";
     margin-left:40px;
 }
@@ -67,7 +66,7 @@ body{
 #wyloguj{
     float:right;
     font-size:21px;
-    color:darkgreen;
+    color:#BC004F;
     cursor:pointer;
 }
 
@@ -90,22 +89,18 @@ body{
 #menu{
     width:1100px;
     height:50px;
-    background-color:#1f1f1f;
+    background-color:#1E2332;
     margin-top:50px;
     margin-left:auto;
     margin-right:auto;
-    border:1px solid #1a1a1a;
-    border-bottom:0;
 }
 
 #tresc{
     width:1100px;
     min-height:750px;
-    background-color:#121212;
+    background-color:#d9d9d9;
     margin-left:auto;
     margin-right:auto;
-    border:1px solid #1a1a1a;
-    border-top:0;
 }
 
 ul {
@@ -124,17 +119,16 @@ li a {
     width: 130px;
     text-decoration: none;
     color:#Fff;
-    background-color:#191f24;
+    background-color:#1E2332;
     width:200px;
     height:50px;
     line-height:50px;
     margin: 0px 1px 1px 0px;
-    border-right:1px solid #121212;
 
 }
 
 li a:hover {
-    background: #232a31;
+    background: #3a4463;
 }
 
 #rodzaj{
@@ -145,11 +139,10 @@ li a:hover {
     margin-right:auto;
     font-size:22px;
     font-family:"Segoe UI";
-    color:#fff
 }
 
 #ttresc{
-    background-color:#1f1f1f;
+    background-color:#fff;
     width:900px;
     height:650px;
     margin-left:auto;
@@ -157,7 +150,7 @@ li a:hover {
 }
 
 .etap{
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #d9d9d9;
     width:850px;
     margin-left:auto;
     margin-right:auto;
@@ -165,13 +158,11 @@ li a:hover {
     font-weight:600;
     font-size:16px;
     font-family:"Segoe UI";
-    color:#d1d1d1;
 }
 #moje_konto{
     width:850px;
     margin-left:auto;
     margin-right:auto;
-    color:#d1d1d1;
 }
 
 #mk_text{
@@ -205,7 +196,6 @@ li a:hover {
     margin-right:15px;
     margin-left:120px;
     margin-top:3px;
-    color:#d1d1d1;
 }
 
 .inputyy{
@@ -226,11 +216,9 @@ li a:hover {
     height:50px;
     font-family:"Segoe UI";
     font-size:17px;
-    padding-right:43px;
+    margin-left:5px;
     font-weight:600;
-    line-height:40px;
-    margin-left:-240px;
-    color:#fff;
+    line-height:28px;
 }
 
 #przyciski{
@@ -257,9 +245,9 @@ li a:hover {
     box-sizing:border-box;
     transition:.3s;
     outline:none;
-    padding:2px 5px;
+    padding:2 5;
     margin-left:10px;
-    width:280px;
+    width:300px;
     height:30px;
 }
 
@@ -289,19 +277,6 @@ li a:hover {
     margin-left:10px;
     width:170px;
     height:30px;
-    color:#fff;
-}
-
-#datad{
-    float:left;
-    width:15px;
-    height:15px;
-    cursor:pointer;
-    color:#fff;
-    font-size:25px;
-    font-weight:600;
-    line-height:34px;
-    margin-left:5px;
 }
 
 input[type=text]:focus , input[type=email]:focus{
@@ -343,7 +318,7 @@ input[type=text]:focus , input[type=email]:focus{
 
 #p2 input{
     border:0;
-    background-color:darkgreen;
+    background-color:#BC004F;
     color:#fff;
     font-size:16px;
     width:170px;
@@ -354,66 +329,91 @@ input[type=text]:focus , input[type=email]:focus{
 }
 
 #p2 input:hover{
-    border:2px solid darkgreen;
+    border:2px solid #BC004F;
     background-color:#fff;
-    color:darkgreen;
+    color:#BC004F;
     cursor:pointer;
 }
 
-input:not([type="submit"]):not(:placeholder-shown):valid {
-    border-color:#2ecc71;
-    box-shadow:0 0 8px 0 #2ecc71;
+.center, .content{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
-input:not([type="submit"]):not(:placeholder-shown):valid {
-    border-color:#2ecc71;
-    box-shadow:0 0 8px 0 #2ecc71;
+.content{
+    opacity: 0;
+    visibility: hidden;
+    width: 400px;
+    height: 350px;
+    background: white;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
 }
-
-input:not([type="submit"]):focus:invalid {
-    border-color: darkgreen;
-    box-shadow:0 0 8px 0 darkgreen;
+#zalozKonto.disabled{
+    pointer-events: none;
 }
-
-input:not([type="submit"]):not(:placeholder-shown) {
-    border-color: red;
-    box-shadow:0 0 8px 0 red;
+.content.show{
+    opacity: 1;
+    visibility: visible;
 }
-
-input:not([type="text"]):not(:placeholder-shown) {
-    border-color: grey;
-    box-shadow:0 0 0px 0 white;
-}
-
-input:not([type="submit"]) + .input-requirements {
+.header{
+    height: 68px;
+    background: #bd004f;
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 1s ease-out;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
 }
 
-input:not([type="submit"]):hover + .input-requirements,
-input:not([type="submit"]):focus + .input-requirements,
-input:not([type="submit"]):active + .input-requirements {
-    max-height: 1000px;
-    transition: max-height 1s ease-in;
+.header h2{
+    margin-top: 20px;
+    color: white;
+    padding-left: 32px;
+    font-weight: bold;
 }
-
-.input-requirements {
-    padding-left: 10px;
-    font-style: italic;
-    margin-left: 20px;
-    color: rgb(150,150,150);
+.fa-times{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
-
-
-.input-requirements li.invalid {
-    color: #e74c3c;
+.fa-check-circle{
+    font-size: 50px;
+    margin: 30px 0 0 160px;
+    color: #bd004f;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    text-align: center;
 }
-.input-requirements li.valid {
-    color: #2ecc71;
+.text{
+    font-size: 30px;
+    padding-top: 10px;
+    text-align: center;
 }
-
-.input-requirements li.valid:after {
-    display: inline-block;
-    content: "\2713";
+.line{
+    margin-top: 20px;
+    width: 100%;
+    height: 1px;
+    background: #bd004f;
+}
+.close-btn{
+    font-weight: bold;
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 2px solid #bd004f;
+    background: #bd004f;
+    border-radius: 3px;
+    color: white;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.close-btn:hover{
+    font-weight: bold;
+    background: white;
+    color: #bd004f;
 }
