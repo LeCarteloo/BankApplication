@@ -155,7 +155,7 @@
 
                                                 array_push($dataKwota["Przelewy"], $dataItem);
 
-                                                print_r($dataKwota);
+                                                //print_r($dataKwota);
 
                                                 $contentZmianaKwoty = json_encode($dataKwota);
 
@@ -213,19 +213,19 @@
                                         $dataItem = array();
 
                                         $dataItem = array(
-                                                    'numerZlecajacego' => $val->numerZlecajacego,
-                                                    'numerOdbiorcy' => $val->numerOdbiorcy,
-                                                    'tytul' => $val->tytul,
-                                                    'nazwa' => $val->nazwa,
-                                                    'kwota' => $val->kwota,
-                                                    'data' => $val->data,
-                                                    'id_status' => $status,
-                                                    'type' => $type
-                                                );
+                                            'numerZlecajacego' => $val->numerZlecajacego,
+                                            'numerOdbiorcy' => $val->numerOdbiorcy,
+                                            'tytul' => $val->tytul,
+                                            'nazwa' => $val->nazwa,
+                                            'kwota' => $val->kwota,
+                                            'data' => $val->data,
+                                            'id_status' => $status,
+                                            'type' => $type
+                                        );
 
-                                                array_push($dataKwota["Przelewy"], $dataItem);
+                                        array_push($dataKwota["Przelewy"], $dataItem);
 
-                                        print_r($dataKwota);
+                                        //print_r($dataKwota);
                                         $contentZmianaKwoty = json_encode($dataKwota);
 
                                         $curlZmianaKwoty = curl_init($urlZmianaKwoty);
@@ -281,20 +281,20 @@
 
                                         $dataItem = array();
 
-                                                $dataItem = array(
-                                                    'numerZlecajacego' => $val->numerZlecajacego,
-                                                    'numerOdbiorcy' => $val->numerOdbiorcy,
-                                                    'tytul' => $val->tytul,
-                                                    'nazwa' => $val->nazwa,
-                                                    'kwota' => $val->kwota,
-                                                    'data' => $val->data,
-                                                    'id_status' => $status,
-                                                    'type' => $type
-                                                );
+                                        $dataItem = array(
+                                            'numerZlecajacego' => $val->numerZlecajacego,
+                                            'numerOdbiorcy' => $val->numerOdbiorcy,
+                                            'tytul' => $val->tytul,
+                                            'nazwa' => $val->nazwa,
+                                            'kwota' => $val->kwota,
+                                            'data' => $val->data,
+                                            'id_status' => $status,
+                                            'type' => $type
+                                        );
 
-                                                array_push($dataKwota["Przelewy"], $dataItem);
+                                        array_push($dataKwota["Przelewy"], $dataItem);
 
-                                        print_r($dataKwota);
+                                        //print_r($dataKwota);
 
                                         $contentZmianaKwoty = json_encode($dataKwota);
 
