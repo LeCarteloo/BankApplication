@@ -45,7 +45,7 @@
 
       $final = $this->generateBankNumber("PL",$bankNumber,$accountNumber);
       $addUserQuery = "INSERT INTO " . $this->tableUser . " (name,surname,login,password,bankNumber,pesel,email,telephoneNumber,location,street,houseNumber,postCode,balance)
-      VALUES('$name','$surname','$login',PASSWORD('$password'),'$final', '$pesel', '$email', '$telephoneNumber', '$location', '$street', '$houseNumber', '$postCode','0')";
+      VALUES('$name','$surname','$login','$password','$final', '$pesel', '$email', '$telephoneNumber', '$location', '$street', '$houseNumber', '$postCode','0')";
 
       $stmtAdd = $this->connection->prepare($addUserQuery);
       $stmtAdd->execute();
