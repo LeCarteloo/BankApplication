@@ -114,7 +114,7 @@
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
             header("Refresh:2");
             //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
-        }else if($numer_banku == '02042137'){
+        }else if($numer_banku == '87654321'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================
@@ -156,7 +156,7 @@
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
             header("Refresh:2");
             //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
-        }else if($numer_banku == '02042137'){
+        }else if($numer_banku == '87654321'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================
