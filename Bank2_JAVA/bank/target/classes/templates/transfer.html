@@ -1,0 +1,127 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/transfer.css}"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="content">
+    <div id="odstpet"></div>
+    <div id="baner">
+        <a th:href="@{login}"><div id="logo">
+            <div id="logo_text">
+                BardzoZły
+            </div>
+            <div id="logo_text2">
+                Bank
+            </div>
+        </div></a>
+        <a th:href="@{/logout}"><div id="wyloguj"> <i class="fas fa-power-off"></i>Wyloguj </div></a>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a th:href="@{/login}">Strona główna</a></li>
+            <li><a th:href="@{/transfer}">Przelewy</a></li>
+            <li><a th:href="@{/history}">Historia</a></li>
+            <li style="float:right;">
+                <div class="daned"><span th:text= "${session.name}"></span></div>
+                <div class="daned"><span th:text= "${session.surname}"></span></div>
+            </li>
+        </ul>
+    </div>
+    <div id="tresc">
+        <div id="rodzaj">Przelewy</div>
+        <div id="ttresc">
+            <form action="#" th:action="@{/transfer}" method="POST" id="przelewForm" name="przelewForm" autocomplete="off">
+                <div class="etap">
+                    Z konta
+                </div>
+                <div id="moje_konto">
+                    <input type="hidden" id="balance" th:value="${session.balance}">
+                    <input type="hidden" id="accountNum" th:value="${session.bankNumber}">
+                    <div id="mk_text">Mastercard konto (<span th:text="${session.balance}"></span> PLN)<br>
+                        <span th:text="${session.bankNumber}"></span>
+                </div>
+                <div class="etap">
+                    Dane odbiorcy przelewu
+                </div>
+                <div id="docelowe_konto">
+                    <div id="odstep"></div>
+                    <div class="wejscie">
+                        <div class="textt">Nazwa odbiorcy</div>
+                        <div class="inputyy">
+                            <input type="text" name="nazwa" class="wersja1" placeholder="Nazwa odbiorcy" required>
+                        </div>
+                    </div>
+                    <div class="wejscie">
+                        <div class="textt">Numer konta</div>
+                        <div class="inputyy">
+                            <label for="number">
+                                <input type="text" name="numer" class="wersja1" id="numer" placeholder="Numer konta" required>
+                                <ul class ="input-requirements">
+                                    <li>Musi zawierać tylko cyfry</li>
+                                    <li>Musi zawierać dwadzieścia sześć cyfr</li>
+                                    <li>Inny numer niż swój</li>
+                                </ul>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="etap">
+                    Szczegóły
+                </div>
+                <div id="informacje">
+                    <div id="odstep"></div>
+                    <div class="wejscie2">
+                        <div class="textt">Tytuł przelewu</div>
+                        <div class="inputyy">
+                            <input type="text" name="tytul" class="wersja1" placeholder="Tytuł przelewu" required>
+                        </div>
+                    </div>
+                    <div class="wejscie2">
+                        <div class="textt">Kwota</div>
+                        <div class="inputyy">
+                            <label for="amount">
+                                <input type="text" name="kwota" class="wersja2" id="kwota" placeholder="Kwota" required>
+                                <ul class ="input-requirements">
+                                    <li>Musi zawierać tylko cyfry</li>
+                                    <li>Musisz mieć taką kwote na koncie</li>
+                                    <li>Więcej niż zero</li>
+                                </ul>
+                            </label>
+                        </div>
+                        <div id="PLN"> PLN</div>
+                    </div>
+                    <div class="wejscie2">
+                        <div class="textt">Data wykonania</div>
+                        <div class="inputyy">
+                            <input type="date" name="data" id="datap" class="wersja3"><div id="datad" onClick="datad()">+</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="etap"></div>
+                <div id="przyciski">
+                    <div id="p1"><input type="reset" value="Wyczyść"></div>
+                    <div id="p2"><input type="submit" value="Wykonaj przelew" name="wykonajPrzelew" id="wykonajPrzelew"></div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div id="stopka">
+        STOPKA COPYRAJT @ NIE MOJE
+    </div>
+</div>
+
+<script th:src="@{scripts/transfer.js}"></script>
+<script>
+    document.getElementById('datap').valueAsDate = new Date();
+    function datad(){
+        document.getElementById('datap').valueAsDate = new Date();
+
+    }
+</script>
+</body>
+</html>

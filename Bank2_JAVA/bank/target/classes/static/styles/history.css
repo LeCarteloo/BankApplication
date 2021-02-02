@@ -1,0 +1,310 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+*{
+    margin:0;
+}
+
+body{
+    background-color:#292929;
+    text-decoration:none;
+}
+
+#content{
+    min-height: 100vh;
+    background-color:#292929;
+}
+
+#stopka{
+    width:100%;
+    bottom: 0;
+    height: 50px;
+    border-top:1px solid #141414;
+    text-align:center;
+    line-height:50px;
+    color:#737373;
+    margin-top:20px;
+}
+
+#odstpet{
+    width:100%;
+    height:10px;
+}
+
+#baner{
+    width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#logo{
+    width:200px;
+    height:70px;
+    background-color:darkgreen;
+    font-family:"Segoe UI";
+    margin-left:40px;
+}
+
+#logo_text{
+    color:#fff;
+    font-weight:600;
+    float:left;
+    width:95%;
+    height:35px;
+    font-size:20px;
+    border-bottom:1px solid #fff;
+    padding:0 0 0 10px;
+}
+
+#logo_text2{
+    color:#fff;
+    float:left;
+    width:90%;
+    height:15px;
+    text-align:right;
+    font-size:18px;
+}
+
+#wyloguj{
+    float:right;
+    font-size:21px;
+    color:darkgreen;
+    cursor:pointer;
+}
+
+#wyloguj i{
+    margin-right:5px;
+}
+
+.daned{
+    float:left;
+    margin-right:5px;
+    margin-left:10px;
+    color:#fff;
+    width:100%;
+    float:right;
+    text-align:right;
+    font-size:18px;
+    padding:2px 15px 0 0;
+}
+
+#menu{
+    width:1100px;
+    height:50px;
+    background-color:#1f1f1f;
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #1a1a1a;
+    border-bottom:0;
+}
+
+#tresc{
+    width:1100px;
+    min-height:720px;
+    background-color:#121212;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #1a1a1a;
+    border-top:0;
+}
+
+ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li a {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    width: 130px;
+    text-decoration: none;
+    color:#Fff;
+    background-color:#191f24;
+    width:200px;
+    height:50px;
+    line-height:50px;
+    margin: 0px 1px 1px 0px;
+    border-right:1px solid #121212;
+
+}
+
+li a:hover {
+    background: #232a31;
+}
+
+#trescc{
+    width:900px;
+    min-height:700px;
+    padding:0 0 50px 0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#odstepg{
+    width:100%;
+    height:30px;
+}
+
+#inforekord{
+    width:900px;
+    height:30px;
+    background-color:#36363c;
+    margin-left:auto;
+    margin-right:auto;
+    border-bottom:1px solid black;
+    color:#d1d1d1;
+}
+
+#datar{
+    height:30px;
+    width:120px;
+    padding:0 0 0 5px;
+    line-height:30px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#tytulr{
+    height:30px;
+    width:245px;
+    padding:0 0 0 5px;
+    line-height:30px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#nazwar{
+    height:30px;
+    width:170px;
+    padding:0 0 0 5px;
+    line-height:30px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#nrr{
+    height:30px;
+    width:245px;
+    padding:0 0 0 5px;
+    line-height:30px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#kwotar{
+    height:30px;
+    width:85px;
+    padding:0 0 0 5px;
+    line-height:30px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#datarr{
+    height:30px;
+    width:120px;
+    padding:0 0 0 5px;
+    font-size:18px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+    line-height:50px;
+}
+
+#tytulrr{
+    height:30px;
+    width:245px;
+    padding:0 0 0 5px;
+    font-size:18px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+    line-height:50px;
+}
+
+#nazwarr{
+    height:30px;
+    width:170px;
+    padding:0 0 0 5px;
+    line-height:50px;
+    font-size:18px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+    line-height:50px;
+}
+
+#nrrr{
+    height:30px;
+    width:220px;
+    padding:0 0 0 5px;
+    line-height:50px;
+    font-size:16px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+}
+
+#kwotarr{
+    height:30px;
+    width:110px;
+    padding:0 0 0 15px;
+    line-height:50px;
+    font-size:18px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+    color:red;
+}
+
+#kwotarrd{
+    height:30px;
+    width:110px;
+    padding:0 0 0 15px;
+    line-height:50px;
+    font-size:18px;
+    font-family:"Segoe UI";
+    font-weight:600;
+    text-align:center;
+    float:left;
+    color:green;
+}
+
+.odstep{
+    width:100%;
+    height:5px;
+}
+
+.rekord{
+    width:900px;
+    height:50px;
+    background-color:#191f24;
+    margin-left:auto;
+    margin-right:auto;
+    border-bottom:1px solid black;
+    color:#e1e1e1;
+}
