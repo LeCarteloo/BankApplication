@@ -89,17 +89,38 @@
         $status = '1';
         $numer_banku = substr($_POST['nr_banku'],4, -16);
         if($numer_banku == '12345678'){ 
-            //==================================================
-            //TUTAJ PODAC API DO ZMIANY STATUSU BANKU PIERWSZEGO
-            //==================================================
+            $url = 'http://localhost/Bank1_PHP/Backend/updateStatus.php';
+
+            $data = array(
+                'id' => $id_bankowe,
+                'id_status' => $status
+            );
+
+            $content = json_encode($data);
+
+            $curl = curl_init($url);
+
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_HTTPHEADER,
+            array("Content-type: application/json"));
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
+
+            $json_response = curl_exec($curl);
+
+            //echo $json_response;
+            
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
-            echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
+            header("Refresh:2");
+            //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
         }else if($numer_banku == '02042137'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
-            echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
+            header("Refresh:2");
+            //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
         }else{
             echo "BRAK BANKU W BAZIE BANKÓW";
         }
@@ -110,17 +131,38 @@
         $status = '3';
         $numer_banku = substr($_POST['nr_banku'],4, -16);
         if($numer_banku == '12345678'){ 
-            //==================================================
-            //TUTAJ PODAC API DO ZMIANY STATUSU BANKU PIERWSZEGO
-            //==================================================
+            $url = 'http://localhost/Bank1_PHP/Backend/updateStatus.php';
+
+            $data = array(
+                'id' => $id_bankowe,
+                'id_status' => $status
+            );
+
+            $content = json_encode($data);
+
+            $curl = curl_init($url);
+
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_HTTPHEADER,
+            array("Content-type: application/json"));
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
+
+            $json_response = curl_exec($curl);
+
+            //echo $json_response;
+
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
-            echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
+            header("Refresh:2");
+            //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
         }else if($numer_banku == '02042137'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
-            echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
+            header("Refresh:2");
+            //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
         }else{
             echo "BRAK BANKU W BAZIE BANKÓW";
         }
