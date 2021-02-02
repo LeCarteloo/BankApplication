@@ -112,7 +112,7 @@ class Transfer{
         $query = "INSERT INTO " . $this->tableHistory . "
         SET
         numerZlecajacego=:numerZlecajacego, numerOdbiorcy=:numerOdbiorcy, tytul=:tytul, nazwa=:nazwa, kwota=:kwota, data=:data, id_status=:id_status, type=:type;
-        UPDATE user SET balance = (SELECT balance FROM user WHERE bankNumber=:numerZlecajacego) + :kwota WHERE bankNumber=:numerZlecajacego;";
+        UPDATE user SET balance = (SELECT balance FROM user WHERE bankNumber=:numerOdbiorcy) + :kwota WHERE bankNumber=:numerOdbiorcy;";
         // przygotowanie zapytania
         $stmt  = $this->connection->prepare($query);
 
