@@ -17,6 +17,8 @@ class Transfer{
   public $data;
   public $type;
 
+  public $numerKonta;
+
   public function __construct($db){
           $this->connection = $db;
   }
@@ -134,6 +136,29 @@ class Transfer{
         $stmt->bindParam(":data", $this->data);
         $stmt->bindParam(":id_status", $this->id_status);
         $stmt->bindParam(":type", $this->type);
+
+        // wykonanie zapytania
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+   }
+
+
+   function addCash(){
+     // zapytanie do wstawiania rekordu
+        $query = "UPDATE " . $this->tableUser . " SET balance = (SELECT balance FROM user WHERE bankNumber=:numerKonta) + :kwota WHERE bankNumber=:numerKonta;";
+        // przygotowanie zapytania
+        $stmt  = $this->connection->prepare($query);
+
+        // zabezpieczenie
+        $this->numerKonta    = htmlspecialchars(strip_tags($this->numerKonta));
+        $this->kwota   = htmlspecialchars(strip_tags($this->kwota));
+
+        // podłączenie wartości do zapytania
+        $stmt->bindParam(":numerKonta", $this->numerKonta);
+        $stmt->bindParam(":kwota", $this->kwota);
 
         // wykonanie zapytania
         if ($stmt->execute()) {
