@@ -87,6 +87,7 @@
         $id_przelewu = $_POST['id_przelewu'];
         $id_bankowe = $_POST['id_bankowe'];
         $status = '1';
+        //$type = 'Zewnetrzny';
         $numer_banku = substr($_POST['nr_banku'],4, -16);
         if($numer_banku == '12345678'){ 
             $url = 'http://localhost/Bank1_PHP/Backend/updateStatus.php';
@@ -108,13 +109,49 @@
             curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
 
             $json_response = curl_exec($curl);
+            curl_close($curl);
 
             //echo $json_response;
             
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
+
+            $urlZmianaKwoty = 'http://localhost/Bank1_PHP/Backend/makeTransfer.php';
+
+            $dataKwota['Przelewy'] = array();
+
+            $dataItem = array();
+
+            $dataItem = array(
+                'numerZlecajacego' => $val->numerZlecajacego,
+                'numerOdbiorcy' => $val->numerOdbiorcy,
+                'tytul' => $val->tytul,
+                'nazwa' => $val->nazwa,
+                'kwota' => $val->kwota,
+                'data' => $val->data,
+                'id_status' => '1',
+                'type' => 'Zewnetrzny'
+            );
+
+            array_push($dataKwota["Przelewy"], $dataItem);
+
+            //print_r($dataKwota);
+
+            $contentZmianaKwoty = json_encode($dataKwota);
+
+            $curlZmianaKwoty = curl_init($urlZmianaKwoty);
+
+            curl_setopt($curlZmianaKwoty, CURLOPT_HEADER, false);
+            curl_setopt($curlZmianaKwoty, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curlZmianaKwoty, CURLOPT_HTTPHEADER,
+            array("Content-type: application/json"));
+            curl_setopt($curlZmianaKwoty, CURLOPT_POST, true);
+            curl_setopt($curlZmianaKwoty, CURLOPT_POSTFIELDS, $contentZmianaKwoty);
+
+            $json_responseZmianaKwoty = curl_exec($curlZmianaKwoty);
+
             header("Refresh:2");
             //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
-        }else if($numer_banku == '02042137'){
+        }else if($numer_banku == '87654321'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================
@@ -150,13 +187,48 @@
             curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
 
             $json_response = curl_exec($curl);
+            curl_close($curl);
+
+            $urlZmianaKwoty = 'http://localhost/Bank1_PHP/Backend/makeTransfer.php';
+
+            $dataKwota['Przelewy'] = array();
+
+            $dataItem = array();
+
+            $dataItem = array(
+                'numerZlecajacego' => $val->numerZlecajacego,
+                'numerOdbiorcy' => $val->numerZlecajacego,
+                'tytul' => 'Zwrot kwoty po odrzuceniu przelewu o tytule: ' . $val->tytul,
+                'nazwa' => $val->nazwa,
+                'kwota' => $val->kwota,
+                'data' => $val->data,
+                'id_status' => '1',
+                'type' => 'Zewnetrzny'
+            );
+
+            array_push($dataKwota["Przelewy"], $dataItem);
+
+            print_r($dataKwota);
+
+            $contentZmianaKwoty = json_encode($dataKwota);
+
+            $curlZmianaKwoty = curl_init($urlZmianaKwoty);
+
+            curl_setopt($curlZmianaKwoty, CURLOPT_HEADER, false);
+            curl_setopt($curlZmianaKwoty, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curlZmianaKwoty, CURLOPT_HTTPHEADER,
+            array("Content-type: application/json"));
+            curl_setopt($curlZmianaKwoty, CURLOPT_POST, true);
+            curl_setopt($curlZmianaKwoty, CURLOPT_POSTFIELDS, $contentZmianaKwoty);
+
+            $json_responseZmianaKwoty = curl_exec($curlZmianaKwoty);
 
             //echo $json_response;
 
             $przelewy->changeStatusPrzelewu($id_przelewu, $id_bankowe, $status);
             header("Refresh:2");
             //echo "Ustaw status 1, dla id przelewu " . $id_przelewu . ",id bankowe " . $id_bankowe . ", w banku o numerze " . $numer_banku;
-        }else if($numer_banku == '02042137'){
+        }else if($numer_banku == '87654321'){
             //================================================
             //TUTAJ PODAC API DO ZMIANY STATUSU BANKU DRUGIEGO
             //================================================

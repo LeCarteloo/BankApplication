@@ -73,7 +73,7 @@ var numberValidityChecks = [
 	},
 	{
 		isInvalid: function(input) {
-			return input.value.match(/[^0-9]/g);
+			return input.value.match(adming);
 		},
 		invalidityMessage: 'Tylko cyfry są dozwolone',
 		element: document.querySelector('label[for="number"] .input-requirements li:nth-child(1)')
@@ -83,7 +83,7 @@ var numberValidityChecks = [
 var amountValidityChecks = [
 	{
 		isInvalid: function(input) {
-			return input.value.match(/[^0-9]/g);
+			return !input.value.match(/^\-?([1-9]\d*|0)(\.\d?[1-9])?$/g);
 		},
 		invalidityMessage: 'Tylko cyfry są dozwolone',
 		element: document.querySelector('label[for="amount"] .input-requirements li:nth-child(1)')
