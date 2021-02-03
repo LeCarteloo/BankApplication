@@ -17,7 +17,7 @@ public class BankAccounts {
 
     @GetMapping(value = "/accounts", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public String showExternalTransfers() {
-        String json = "Brak kont";
+        String json = "";
 
         try {
             Connection conn = Database.getConnection();

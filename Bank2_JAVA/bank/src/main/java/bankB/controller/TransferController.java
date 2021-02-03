@@ -35,12 +35,11 @@ public class TransferController {
         Double kwota = Double.parseDouble(request.getParameter("kwota"));
         String data = request.getParameter("data");
         Double kwotaZlecajacego = (Double) request.getSession().getAttribute("balance");
-
-        if (nrKonta.substring(2, 10).equals("12345678")) {
+        if (nrKonta.substring(2, 10).equals(Database.getBankCode())) {
             try {
                 Connection conn = Database.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM user WHERE bankNumber=?");
-                pstmt.setString(1, "PL" + nrKonta);
+                pstmt.setString(1, Database.getBankCountry() + nrKonta);
                 ResultSet rs = pstmt.executeQuery();
                 rs.last();
                 if (rs.getRow() == 1) {
@@ -48,6 +47,7 @@ public class TransferController {
                     pstmt.setDouble(1, (kwotaZlecajacego - kwota));
                     pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
                     pstmt.executeUpdate();
+                    System.out.println(Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
                     request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
 
                     pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
@@ -67,6 +67,29 @@ public class TransferController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else {
+            try {
+                Connection conn = Database.getConnection();
+                PreparedStatement pstmt;
+                pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
+                pstmt.setDouble(1, (kwotaZlecajacego - kwota));
+                pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
+                pstmt.executeUpdate();
+                request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
+
+                pstmt = conn.prepareStatement("INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES (?, ?, ?, ?, ?, ?, 2, 'Zewnetrzny');");
+                pstmt.setString(1, Database.getBankCountry() + request.getSession().getAttribute("bankNumber"));
+                pstmt.setString(2, Database.getBankCountry() + nrKonta);
+                pstmt.setString(3, tytul);
+                pstmt.setString(4, odbiorca);
+                pstmt.setDouble(5, kwota);
+                pstmt.setString(6, data);
+                pstmt.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return "transfer";
     }

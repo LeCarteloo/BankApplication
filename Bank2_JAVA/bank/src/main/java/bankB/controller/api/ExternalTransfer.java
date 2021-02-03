@@ -17,11 +17,11 @@ public class ExternalTransfer {
 
     @GetMapping(value = "/externalTransfers", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public String showExternalTransfers() {
-        String json = "Brak przelewów";
+        String json = "";
         try {
             Connection conn = Database.getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM historia WHERE id_status=2");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM historia WHERE id_status=2 AND type='Zewnetrzny'");
 
             JSONObject jsonObject = new JSONObject();
             JSONArray array = new JSONArray();
@@ -29,8 +29,8 @@ public class ExternalTransfer {
                 JSONObject transfer = new JSONObject();
 
                 transfer.put("id", rs.getInt(1));
-                transfer.put("numerPrzychodzacy", rs.getString(2));
-                transfer.put("numerWychodzacy", rs.getString(3));
+                transfer.put("numerZlecajacego", rs.getString(2));
+                transfer.put("numerOdbiorcy", rs.getString(3));
                 transfer.put("tytul", rs.getString(4));
                 transfer.put("nazwa", rs.getString(5));
                 transfer.put("kwota", rs.getDouble(6));
