@@ -76,7 +76,7 @@
 									<div id="datarr">'.$row["data"].'</div>
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
-									<div id="nrrr">'.$row["numerOdbiorcy"].'</div>
+									<div id="nrrr">'.substr($row["numerOdbiorcy"],2).'</div>
 									<div id="kwotarr">-'.$row["kwota"].' zł</div>
 								</div>';
 								}
@@ -87,7 +87,7 @@
 									<div id="datarr">'.$row["data"].'</div>
 									<div id="tytulrr">'.$row["tytul"].'</div>
 									<div id="nazwarr">'.$row["nazwa"].'</div>
-									<div id="nrrr">'.$row["numerOdbiorcy"].'</div>
+									<div id="nrrr">'.substr($row["numerOdbiorcy"],2).'</div>
 									<div id="kwotarrd">'.$row["kwota"].' zł</div>
 								</div>';
 								}

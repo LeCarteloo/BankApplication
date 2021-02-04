@@ -15,6 +15,14 @@
 		header("Location: index.php");
 		exit();
 	}
+
+ $stmtCash =	$transfer->updateCash($_SESSION['nr_konta']);
+
+ while ($row = $stmtCash->fetch(PDO::FETCH_ASSOC)) {
+
+		 $_SESSION['saldo']=$row['balance'];
+ }
+
 ?>
 
 <html lang="pl">
@@ -73,7 +81,8 @@
 						</div>
 						<div id="moje_konto">
 							<input type="hidden" id="balance" value="<?php  echo $_SESSION['saldo'];?>">
-							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br> <?php  echo $_SESSION['nr_konta'];?></div>
+							<input type="hidden" id="numBank" value="<?php  echo substr($_SESSION['nr_konta'],2);?>">
+							<div id="mk_text">Visa konto (<?php  echo $_SESSION['saldo'];?> PLN) <br> <?php  echo substr($_SESSION['nr_konta'],2);?></div>
 						</div>
 						<div class="etap">
 							Dane odbiorcy przelewu
@@ -94,6 +103,7 @@
 									<ul class ="input-requirements">
 	                  <li>Musi zawierać tylko cyfry</li>
 	                  <li>Musi zawierać dwadzieścia sześć cyfr</li>
+										<li>Musisz podać numer różny od swojego</li>
 	                </ul>
 									</label>
 								</div>
@@ -118,6 +128,7 @@
 									<ul class ="input-requirements">
 	                  <li>Musi zawierać tylko cyfry</li>
 	                  <li>Musisz mieć taką kwote na koncie</li>
+										<li>Musisz podać więcej niż zero</li>
 	                </ul>
 									</label>
 								</div>

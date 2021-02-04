@@ -1,6 +1,12 @@
 <?php
 	session_start();
 
+	include_once '../Backend/objects/transfer.php';
+	include_once '../Backend/config/database.php';
+  $database = new Database();
+	$db = $database->getConnection();
+	$transfer = new Transfer($db);
+
 
 	//sprawdzanie czy istnieje zmienna sesyjna zalogowany
 	if(!isset($_SESSION['zalogowany']))
@@ -9,6 +15,15 @@
 		header("Location: index.php");
 		exit();
 	}
+
+
+	$stmtCash =	$transfer->updateCash($_SESSION['nr_konta']);
+
+	while ($row = $stmtCash->fetch(PDO::FETCH_ASSOC)) {
+
+			$_SESSION['saldo']=$row['balance'];
+	}
+
 ?>
 
 
@@ -52,7 +67,7 @@
 							Visa Konto
 						</div>
 						<div id="numerkonta">
-							<?php  echo $_SESSION['nr_konta'];?>
+							<?php  echo substr($_SESSION['nr_konta'],2);?>
 						</div>
 					</div>
 

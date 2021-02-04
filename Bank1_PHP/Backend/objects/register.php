@@ -35,7 +35,9 @@
        do{
          $accountNumber = rand(1000000000000000,9999999999999999);
 
-         $numberCheckQuery = "SELECT bankNumber FROM" . $this->tableUser . "WHERE bankNumber = '$accountNumber'";
+         $final = $this->generateBankNumber("PL",$bankNumber,$accountNumber);
+
+         $numberCheckQuery = "SELECT bankNumber FROM  " . $this->tableUser . " WHERE bankNumber = '$final'";
 
          $stmtNumber = $this->connection->prepare($numberCheckQuery);
          $stmtNumber->execute();
