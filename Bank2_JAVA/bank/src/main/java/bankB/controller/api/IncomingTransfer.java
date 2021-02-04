@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,8 @@ import java.sql.SQLException;
 public class IncomingTransfer {
 
     @GetMapping(value = "/incomingTransfers")
-    public String handleIncomingTransfers() {
+    public String handleIncomingTransfers(HttpServletRequest request) {
+
 
         Connection conn = Database.getConnection();
         PreparedStatement pstmt;
@@ -47,6 +49,8 @@ public class IncomingTransfer {
                 pstmt = conn.prepareStatement("SELECT balance FROM user WHERE bankNumber=?");
                 pstmt.setString(1, numerOdbiorcy);
                 ResultSet rs = pstmt.executeQuery();
+
+
                 Double obecnaKwota = 0.0;
                 rs.last();
                 if (rs.getRow() == 1) {
@@ -56,7 +60,20 @@ public class IncomingTransfer {
                     pstmt.setDouble(1, obecnaKwota + kwota);
                     pstmt.setString(2, numerOdbiorcy);
                     pstmt.executeUpdate();
+
                 }
+
+                HttpSession session = request.getSession(false);
+                if (session != null) {
+                    pstmt = conn.prepareStatement("SELECT balance FROM user WHERE bankNumber=?");
+                    pstmt.setString(1, "PL" + (String) request.getSession().getAttribute("bankNumber"));
+                    rs = pstmt.executeQuery();
+                    if (rs.next()) {
+                        request.getSession().setAttribute("balance", rs.getDouble(1));
+                    }
+                }
+
+
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

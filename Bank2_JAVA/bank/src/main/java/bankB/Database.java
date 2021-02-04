@@ -26,7 +26,7 @@ public class Database {
     private static final String bankCode = "87654321";
     private static final String bankCountry = "PL";
     private static final String incomingTransferURL = "http://localhost:8080/externalTransfers";
-    private static final String accountsURL = "http://localhost:8080/externalTransfers";
+    private static final String accountsURL = "http://localhost:8080/accounts";
 
     public static String getIncomingTransferURL() {
         return incomingTransferURL;

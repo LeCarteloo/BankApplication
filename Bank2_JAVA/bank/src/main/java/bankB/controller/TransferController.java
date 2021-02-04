@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,11 +22,12 @@ public class TransferController {
     @GetMapping("/transfer")
     public String showTransfer(HttpServletRequest request) {
 
+
         HttpSession session = request.getSession(false);
         if (session == null) {
             return "index";
         }
-
+        request.getSession().setAttribute("transfer", 0);
         return "transfer";
     }
 
@@ -36,7 +38,10 @@ public class TransferController {
         String nrKonta = request.getParameter("numer");
         String tytul = request.getParameter("tytul");
         Double kwota = Double.parseDouble(request.getParameter("kwota"));
-        String data = request.getParameter("data");
+        String data = java.time.LocalDate.now().toString();
+        request.getSession().setAttribute("transfer", 0);
+
+
         Double kwotaZlecajacego = (Double) request.getSession().getAttribute("balance");
         if (nrKonta.substring(2, 10).equals(Database.getBankCode())) {
             try {
@@ -50,7 +55,6 @@ public class TransferController {
                     pstmt.setDouble(1, (kwotaZlecajacego - kwota));
                     pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
                     pstmt.executeUpdate();
-                    System.out.println(Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
                     request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
 
                     pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
@@ -66,6 +70,7 @@ public class TransferController {
                     pstmt.setDouble(5, kwota);
                     pstmt.setString(6, data);
                     pstmt.executeUpdate();
+                    request.getSession().setAttribute("transfer", 1);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -103,6 +108,7 @@ public class TransferController {
                     pstmt.setDouble(5, kwota);
                     pstmt.setString(6, data);
                     pstmt.executeUpdate();
+                    request.getSession().setAttribute("transfer", 1);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
