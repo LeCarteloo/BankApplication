@@ -73,7 +73,7 @@ var numberValidityChecks = [
 	},
 	{
 		isInvalid: function(input) {
-			return input.value.match(adming);
+			return input.value.match(/[^0-9]/g);
 		},
 		invalidityMessage: 'Tylko cyfry są dozwolone',
 		element: document.querySelector('label[for="number"] .input-requirements li:nth-child(1)')
