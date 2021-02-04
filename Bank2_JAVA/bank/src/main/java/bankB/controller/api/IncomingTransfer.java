@@ -17,26 +17,23 @@ import java.sql.SQLException;
 public class IncomingTransfer {
 
     @GetMapping(value = "/incomingTransfers")
-    public String handleIncomingTransfers() throws IOException {
-        String sURL = "http://localhost:8080/externalTransfers";
+    public String handleIncomingTransfers() {
 
         Connection conn = Database.getConnection();
         PreparedStatement pstmt;
         RestTemplate restTemplate = new RestTemplate();
-        String response = restTemplate.getForObject(sURL, String.class);
+        String response = restTemplate.getForObject(Database.getIncomingTransferURL(), String.class);
         JSONObject json = new JSONObject(response);
         JSONArray ja = json.getJSONArray("Przelewy");
         for (int i = 0; i < ja.length(); i++) {
             JSONObject ob = ja.getJSONObject(i);
-            int id = ob.getInt("id");
-            ;
+
             String numerZlecajacego = ob.getString("numerZlecajacego");
             String numerOdbiorcy = ob.getString("numerOdbiorcy");
             String tytul = ob.getString("tytul");
             String nazwa = ob.getString("nazwa");
             Double kwota = ob.getDouble("kwota");
             String data = ob.getString("data");
-            int id_status = ob.getInt("id_status");
             try {
                 pstmt = conn.prepareStatement("INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES (?, ?, ?, ?, ?, ?, 1, 'Zewnetrzny');");
                 pstmt.setString(1, numerZlecajacego);

@@ -5,69 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1d5b083-e541-4b4a-90a7-5fbc63e4e2fe" name="Default Changelist" comment="css">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/api/IncomingTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/jsp_boot_tst_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/jsp_boot_tst_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/api/ChangeStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsp-boot-tst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jsp-boot-tst.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/Transfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/HistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/api/BankAccounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/api/BankAccounts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/api/ExternalTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/api/ExternalTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/user.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/transfer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/transfer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/transfer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/historia.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/przelewZewnetrzny.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/rejestracja.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/zalogowany.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/historia.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/przelewZewnetrzny.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/rejestracja.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/wyloguj.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/zalogowany.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bankB/controller/api/IncomingTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bankB/controller/api/IncomingTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/Database.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/TransferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/api/BankAccounts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/api/BankAccounts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/api/ExternalTransfer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/api/ExternalTransfer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/transfer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/transfer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/transfer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bankB/controller/api/IncomingTransfer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bankB/controller/api/IncomingTransfer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,15 +66,13 @@
     <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,7 +98,8 @@
       <workItem from="1612093626180" duration="5555000" />
       <workItem from="1612176310994" duration="26604000" />
       <workItem from="1612283866523" duration="3046000" />
-      <workItem from="1612361808435" duration="13258000" />
+      <workItem from="1612361808435" duration="16178000" />
+      <workItem from="1612430516131" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="Session">
       <created>1611668625663</created>

@@ -1,9 +1,12 @@
 package bankB.controller;
 
 import bankB.Database;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -69,23 +72,38 @@ public class TransferController {
             }
         } else {
             try {
-                Connection conn = Database.getConnection();
-                PreparedStatement pstmt;
-                pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
-                pstmt.setDouble(1, (kwotaZlecajacego - kwota));
-                pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
-                pstmt.executeUpdate();
-                request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
+                boolean istnieje = false;
+                RestTemplate restTemplate = new RestTemplate();
+                String response = restTemplate.getForObject(Database.getAccountsURL(), String.class);
+                JSONObject json = new JSONObject(response);
+                JSONArray ja = json.getJSONArray("Konta");
+                for (int i = 0; i < ja.length(); i++) {
+                    JSONObject ob = ja.getJSONObject(i);
 
-                pstmt = conn.prepareStatement("INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES (?, ?, ?, ?, ?, ?, 2, 'Zewnetrzny');");
-                pstmt.setString(1, Database.getBankCountry() + request.getSession().getAttribute("bankNumber"));
-                pstmt.setString(2, Database.getBankCountry() + nrKonta);
-                pstmt.setString(3, tytul);
-                pstmt.setString(4, odbiorca);
-                pstmt.setDouble(5, kwota);
-                pstmt.setString(6, data);
-                pstmt.executeUpdate();
+                    String numeryKont = ob.getString("numerBankowy");
+                    if (numeryKont.equals(Database.getBankCountry() + nrKonta)) {
+                        istnieje = true;
+                    }
+                }
+                if (istnieje) {
 
+                    Connection conn = Database.getConnection();
+                    PreparedStatement pstmt;
+                    pstmt = conn.prepareStatement("UPDATE user SET balance =? WHERE bankNumber=?;");
+                    pstmt.setDouble(1, (kwotaZlecajacego - kwota));
+                    pstmt.setString(2, Database.getBankCountry() + (String) request.getSession().getAttribute("bankNumber"));
+                    pstmt.executeUpdate();
+                    request.getSession().setAttribute("balance", kwotaZlecajacego - kwota);
+
+                    pstmt = conn.prepareStatement("INSERT INTO historia (numerZlecajacego, numerOdbiorcy, tytul, nazwa, kwota, data, id_status, type) VALUES (?, ?, ?, ?, ?, ?, 2, 'Zewnetrzny');");
+                    pstmt.setString(1, Database.getBankCountry() + request.getSession().getAttribute("bankNumber"));
+                    pstmt.setString(2, Database.getBankCountry() + nrKonta);
+                    pstmt.setString(3, tytul);
+                    pstmt.setString(4, odbiorca);
+                    pstmt.setDouble(5, kwota);
+                    pstmt.setString(6, data);
+                    pstmt.executeUpdate();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
