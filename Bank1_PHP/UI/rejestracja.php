@@ -10,7 +10,7 @@
  $register = new Register($db);
 
  //numer banku
- $bankNumber = 12345678;?>
+?>
 <html lang="pl">
 	<head>
 		<meta charset="utf-8">
@@ -266,7 +266,7 @@
       if(isset($_POST['zalozKonto'])){
         if(isset($_POST['check1']) && isset($_POST['check2']) && isset($_POST['check3'])){
           $_SESSION['PogChamp'] = 1;
-          $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$bankNumber);
+          $register->registerUser($_POST['imie'],$_POST['nazwisko'],$_POST['login'],$_POST['haslo'],$_POST['powtorzHaslo'],$_POST['pesel'],$_POST['email'],$_POST['telefon'],$_POST['miejscowosc'],$_POST['ulica'],$_POST['numer_domu'],$_POST['kod'],$database->bankNumberA);
           header("Refresh:0");
           exit();
         }

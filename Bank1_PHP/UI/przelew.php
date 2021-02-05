@@ -47,6 +47,16 @@
 					});</script>';
 					unset($_SESSION['success']);
 				}
+				if(isset($_SESSION['error']))
+					{
+						 echo '<script>Swal.fire({
+	  					title: "Błąd",
+	  					text: "Nie istnieje taki numer banku!",
+						icon: "error",
+	  					confirmButtonText: "Zamknij",
+						});</script>';
+						unset($_SESSION['error']);
+					}
 ?>
 	<div id="content">
 	<div id="odstpet"></div>
@@ -148,14 +158,26 @@
 						</div>
 						<?php
 						if(isset($_POST['wykonajPrzelew'])){
-
+							$isValid = FALSE;
+							$json = @file_get_contents($database->linkCheckNumber);
+							 if(@$json){
+								 $arr = json_decode($json);
+								foreach($arr->Konta as $key => $value){
+									if($_POST['numer']==substr($value->numer_konta,2))
+										$isValid = TRUE;
+								}
+								if($isValid == TRUE){
 								$_SESSION['success'] = 1;
-							  if(substr($_POST['numer'],2,-16)=="12345678")
+							  if(substr($_POST['numer'],2,-16)==$database->bankNumberA)
 									$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Wewnetrzny");
-							 else
+							  else
 							 		$_SESSION['saldo'] = $transfer->bankTransfer($_SESSION['nr_konta'],$_POST['numer'],$_POST['tytul'],$_POST['kwota'],$_SESSION['saldo'],$_POST['nazwa'],"Zewnetrzny");
-
-									header("Refresh:0");
+								}
+								else {
+									$_SESSION['error'] = 1;
+								}
+								}
+								header("Refresh:0");
 							}
 						 ?>
 					</form>

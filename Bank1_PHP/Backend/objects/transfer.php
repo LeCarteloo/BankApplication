@@ -145,29 +145,6 @@ class Transfer{
         return false;
    }
 
-
-   function addCash(){
-     // zapytanie do wstawiania rekordu
-        $query = "UPDATE " . $this->tableUser . " SET balance = (SELECT balance FROM user WHERE bankNumber=:numerKonta) + :kwota WHERE bankNumber=:numerKonta;";
-        // przygotowanie zapytania
-        $stmt  = $this->connection->prepare($query);
-
-        // zabezpieczenie
-        $this->numerKonta    = htmlspecialchars(strip_tags($this->numerKonta));
-        $this->kwota   = htmlspecialchars(strip_tags($this->kwota));
-
-        // podłączenie wartości do zapytania
-        $stmt->bindParam(":numerKonta", $this->numerKonta);
-        $stmt->bindParam(":kwota", $this->kwota);
-
-        // wykonanie zapytania
-        if ($stmt->execute()) {
-            return true;
-        }
-
-        return false;
-   }
-
    function updateCash($input){
 
      $query = "SELECT balance FROM " . $this->tableUser . " WHERE bankNumber = '$input'";

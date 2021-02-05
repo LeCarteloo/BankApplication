@@ -6,6 +6,9 @@ private $username = "root";
 private $password = "";
 public $connection;
 
+public $bankNumberA = "12345678";
+public $linkCheckNumber = "http://localhost/ProjectPAB/J_Rozliczajaca/BACKEND/readKonta.php";
+
   public function getConnection(){
     $this->connection = null;
     try{
